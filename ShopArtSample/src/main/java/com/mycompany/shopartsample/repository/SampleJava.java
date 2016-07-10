@@ -10,5 +10,5 @@ package com.mycompany.shopartsample.repository;
  * @author eyuel
  */
 public class SampleJava {
-    
+    //pkdjfdnfldnldf
 }
