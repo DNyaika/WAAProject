@@ -9,7 +9,7 @@
 
     <name>shopart</name>
 
-   <properties>
+    <properties>
         <springframework.version>4.0.6.RELEASE</springframework.version>
         <hibernate.version>4.3.6.Final</hibernate.version>
         <mysql.connector.version>5.1.31</mysql.connector.version>
@@ -108,6 +108,11 @@
             <groupId>javax.servlet</groupId>
             <artifactId>jstl</artifactId>
             <version>1.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.tiles</groupId>
+            <artifactId>tiles-extras</artifactId>
+            <version>2.2.2</version>
         </dependency>
     </dependencies>
 
