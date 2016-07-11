@@ -19,6 +19,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class ShoppingCartController {
        @RequestMapping(value = {"/"}, method = RequestMethod.GET)
     public String loadData(Model model) {
-        return "mainwindow";
+        return "base.definition";
     }
 }

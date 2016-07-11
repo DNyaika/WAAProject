@@ -17,6 +17,7 @@ import org.springframework.web.servlet.view.JstlView;
 import org.springframework.web.servlet.view.UrlBasedViewResolver;
 import org.springframework.web.servlet.view.tiles2.TilesConfigurer;
 import org.springframework.web.servlet.view.tiles2.TilesView;
+import org.springframework.web.servlet.view.tiles3.TilesViewResolver;
 
 /**
  *
@@ -27,36 +28,17 @@ import org.springframework.web.servlet.view.tiles2.TilesView;
 @ComponentScan(basePackages = "com.mycompany.shopart")
 public class AppConfig {
 
-    @Bean
-    public ViewResolver viewResolver() {
-        InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
-        viewResolver.setViewClass(JstlView.class);
-        viewResolver.setPrefix("/WEB-INF/jsp/");
-        viewResolver.setSuffix(".jsp");
+     @Bean
+    TilesViewResolver viewResolver(){
+        TilesViewResolver viewResolver = new TilesViewResolver();
         return viewResolver;
     }
 
     @Bean
-    public MessageSource messageSource() {
-        ResourceBundleMessageSource messageSource = new ResourceBundleMessageSource();
-        messageSource.setBasename("messages");
-        return messageSource;
-    }
-
-    @Bean
-    public UrlBasedViewResolver viewResolver1() {
-        UrlBasedViewResolver viewResolver = new UrlBasedViewResolver();
-        viewResolver.setViewClass(TilesView.class);
-        return viewResolver;
-    }
-
-    @Bean
-    public TilesConfigurer tilesConfigurer() {
-        TilesConfigurer tilesConfigurer = new TilesConfigurer();
-        tilesConfigurer.setDefinitions(new String[]{
-            "/WEB-INF/tiles.xml"
-        });
-        //tilesConfigurer.setCheckRefresh(true);
-        return tilesConfigurer;
+    org.springframework.web.servlet.view.tiles3.TilesConfigurer tilesConfigurer(){
+        org.springframework.web.servlet.view.tiles3.TilesConfigurer tilesConfigurer = new org.springframework.web.servlet.view.tiles3.TilesConfigurer();
+        tilesConfigurer.setDefinitions("WEB-INF/jsp/tiles/tiles.xml");
+        tilesConfigurer.setPreparerFactoryClass(org.springframework.web.servlet.view.tiles3.SpringBeanPreparerFactory.class);
+        return tilesConfigurer;    
     }
 }

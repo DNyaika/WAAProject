@@ -12,6 +12,6 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Contact</h1>
+        <h1>body</h1>
     </body>
 </html>

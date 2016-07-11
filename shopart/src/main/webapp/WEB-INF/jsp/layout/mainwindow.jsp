@@ -13,12 +13,19 @@
         <title><tiles:insertAttribute name="title" ignore="true" /></title>
     </head>
     <body>
-        <table border="1" cellpadding="2" cellspacing="2" align="center">
-            <tr>
-                <td height="30" colspan="2"><tiles:insertAttribute name="header" />
-                </td>
-            </tr>
-        
-        </table>
+        <div>
+            <tiles:insertAttribute name="header" />
+        </div>
+        <div>
+        <div>
+            <tiles:insertAttribute name="menu" />
+        </div>
+        <div>
+            <tiles:insertAttribute name="body" />
+        </div>
+        </div>
+        <div>
+            <tiles:insertAttribute name="footer" />
+        </div>
     </body>
 </html>
