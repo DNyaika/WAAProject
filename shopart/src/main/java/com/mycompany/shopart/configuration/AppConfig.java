@@ -12,6 +12,8 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.support.ResourceBundleMessageSource;
 import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.JstlView;
 import org.springframework.web.servlet.view.UrlBasedViewResolver;
@@ -26,19 +28,31 @@ import org.springframework.web.servlet.view.tiles3.TilesViewResolver;
 @Configuration
 @EnableWebMvc
 @ComponentScan(basePackages = "com.mycompany.shopart")
-public class AppConfig {
+public class AppConfig extends WebMvcConfigurerAdapter {
 
-     @Bean
-    TilesViewResolver viewResolver(){
+    @Bean
+    TilesViewResolver viewResolver() {
         TilesViewResolver viewResolver = new TilesViewResolver();
         return viewResolver;
     }
 
     @Bean
-    org.springframework.web.servlet.view.tiles3.TilesConfigurer tilesConfigurer(){
+    org.springframework.web.servlet.view.tiles3.TilesConfigurer tilesConfigurer() {
         org.springframework.web.servlet.view.tiles3.TilesConfigurer tilesConfigurer = new org.springframework.web.servlet.view.tiles3.TilesConfigurer();
         tilesConfigurer.setDefinitions("WEB-INF/jsp/tiles/tiles.xml");
         tilesConfigurer.setPreparerFactoryClass(org.springframework.web.servlet.view.tiles3.SpringBeanPreparerFactory.class);
-        return tilesConfigurer;    
+        return tilesConfigurer;
+    }
+
+    @Bean
+    public MessageSource messageSource() {
+        ResourceBundleMessageSource messageSource = new ResourceBundleMessageSource();
+        messageSource.setBasename("messages");
+        return messageSource;
+    }
+
+    @Override
+    public void addResourceHandlers(final ResourceHandlerRegistry registry) {
+        registry.addResourceHandler("/resources/**").addResourceLocations("/resources/");
     }
 }
