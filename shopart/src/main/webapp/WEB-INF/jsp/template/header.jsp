@@ -90,12 +90,6 @@
             </div>
         </div>
     </nav>
-
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12 text-center">Be sure to include <a href="http://daneden.github.io/animate.css/" target="_blank" title="animate.css">animate.css</a> for the animations</div>
-        </div>
-    </div>
 </section>
 
 

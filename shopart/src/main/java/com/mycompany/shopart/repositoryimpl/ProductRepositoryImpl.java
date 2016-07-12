@@ -17,7 +17,8 @@ import org.springframework.stereotype.Repository;
  * @author davie
  */
 @Repository
-public class ProductRepositoryImpl extends AbstractDAO<Integer, Product> implements IProductRepository {
+//extends AbstractDAO<Integer, Product> 
+public class ProductRepositoryImpl implements IProductRepository {
 
     public ProductRepositoryImpl() {
     }

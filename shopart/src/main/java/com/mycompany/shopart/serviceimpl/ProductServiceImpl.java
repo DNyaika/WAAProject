@@ -19,7 +19,7 @@ import org.springframework.transaction.annotation.Transactional;
  * @author Eyuel
  */
 @Service
-@Transactional
+//@Transactional
 public class ProductServiceImpl implements IProductService {
 
     public ProductServiceImpl() {

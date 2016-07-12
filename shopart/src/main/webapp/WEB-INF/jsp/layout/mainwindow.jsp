@@ -19,7 +19,7 @@
             <tiles:insertAttribute name="header" />
         </div>
         <div id="wrapper">
-            <div id="sidebar-wrapper" class="col-md-1" style="margin-top: 300px;">
+            <div id="sidebar-wrapper" class="col-md-1" style="margin-top: 250px;">
                 <div id="sidebar">
                     <tiles:insertAttribute name="menu" />
                 </div>

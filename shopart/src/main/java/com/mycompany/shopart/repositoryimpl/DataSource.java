@@ -17,20 +17,20 @@ import java.util.List;
 public class DataSource {
 
 //Products
-    private static Product samSungGalaxyS4;
-    private static Product samSungGalaxyS3;
-    private static Product samSungGalaxyS2;
+    private static final Product samSungGalaxyS4;
+    private static final Product samSungGalaxyS3;
+    private static final Product samSungGalaxyS2;
     private static Product samSungGalaxyNote5;
     private static Product samSungGalaxyNote6;
     private static Product samSungGalaxyNote4;
-    private static Product samSungGalaxyNote3;
-    private static List<Product> productsList = new ArrayList<>();
+    private static final Product samSungGalaxyNote3;
+    private static final List<Product> productsList = new ArrayList<>();
 
     //Category
-    private static Category category;
+    private static final Category category;
 
     static {
-        Category category = new Category(1);
+        category = new Category(1);
         category.setCategoryName("Electronics");
 //products
         samSungGalaxyS2 = new Product();
@@ -43,11 +43,11 @@ public class DataSource {
 
         samSungGalaxyS3 = new Product();
         samSungGalaxyS3.setPrice(100);
-        samSungGalaxyS2.setProductId(2);
-        samSungGalaxyS2.setProductName("SamSung Galaxy S3");
-        samSungGalaxyS2.setProductImage("P1234");
-        samSungGalaxyS2.setModel("S3");
-        samSungGalaxyS2.setProductCategory(category);
+        samSungGalaxyS3.setProductId(2);
+        samSungGalaxyS3.setProductName("SamSung Galaxy S3");
+        samSungGalaxyS3.setProductImage("P1234");
+        samSungGalaxyS3.setModel("S3");
+        samSungGalaxyS3.setProductCategory(category);
 
         samSungGalaxyS4 = new Product();
         samSungGalaxyS4.setPrice(100);

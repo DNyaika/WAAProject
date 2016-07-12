@@ -5,7 +5,11 @@
  */
 package com.mycompany.shopart.controller;
 
+import com.mycompany.shopart.model.Product;
+import com.mycompany.shopart.service.IProductService;
+import com.mycompany.shopart.serviceimpl.ProductServiceImpl;
 import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,8 +21,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
  */
 @Controller
 public class ShoppingCartController {
+    @Autowired
+    IProductService productService;
+    
        @RequestMapping(value = {"/"}, method = RequestMethod.GET)
     public String loadData(Model model) {
+        List<Product> products = productService.findAllProduct();
+        model.addAttribute("products",products);
         return "base.definition";
     }
 }

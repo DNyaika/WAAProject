@@ -26,12 +26,12 @@ import javax.xml.bind.annotation.XmlTransient;
  * @author eyuel
  */
 @Entity
-@Table(name = "category")
+//@Table(name = "category")
 @XmlRootElement
-@NamedQueries({
-    @NamedQuery(name = "Category.findAll", query = "SELECT c FROM Category c"),
-    @NamedQuery(name = "Category.findByCategoryId", query = "SELECT c FROM Category c WHERE c.categoryId = :categoryId"),
-    @NamedQuery(name = "Category.findByCategoryName", query = "SELECT c FROM Category c WHERE c.categoryName = :categoryName")})
+//@NamedQueries({
+//    @NamedQuery(name = "Category.findAll", query = "SELECT c FROM Category c"),
+//    @NamedQuery(name = "Category.findByCategoryId", query = "SELECT c FROM Category c WHERE c.categoryId = :categoryId"),
+//    @NamedQuery(name = "Category.findByCategoryName", query = "SELECT c FROM Category c WHERE c.categoryName = :categoryName")})
 public class Category implements Serializable {
 
     private static final long serialVersionUID = 1L;
