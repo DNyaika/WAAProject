@@ -8,9 +8,8 @@ package com.mycompany.shopart.repositoryimpl;
 import com.mycompany.shopart.model.Product;
 import com.mycompany.shopart.repository.AbstractDAO;
 import com.mycompany.shopart.repository.IProductRepository;
-import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.List;
-import org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -18,14 +17,14 @@ import org.springframework.stereotype.Repository;
  * @author davie
  */
 @Repository
-public class ProductRepositoryImpl extends AbstractDAO<Integer,Product> implements IProductRepository {
+public class ProductRepositoryImpl extends AbstractDAO<Integer, Product> implements IProductRepository {
 
     public ProductRepositoryImpl() {
     }
 
     @Override
     public Product findById(int productId) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return DataSource.getProductById(productId);
     }
 
     @Override
@@ -45,12 +44,15 @@ public class ProductRepositoryImpl extends AbstractDAO<Integer,Product> implemen
 
     @Override
     public List<Product> findAllProduct() {
-       return DataSource.getProducts();
+        return DataSource.getProducts();
     }
 
     @Override
     public List<Product> findAllProductByCategory(int categoryId) {
-        return  null;
+        List<Product> products = new ArrayList<>();
+        for (Product product : DataSource.getProductByCatalogId(categoryId).getProductCollection()) {
+            products.add(product);
+        }
+        return products;
     }
-    
 }

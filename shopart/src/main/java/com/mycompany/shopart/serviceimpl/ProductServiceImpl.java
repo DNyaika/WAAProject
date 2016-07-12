@@ -15,22 +15,22 @@ import org.springframework.transaction.annotation.Transactional;
 
 /**
  *
- * @author david 
+ * @author david
  * @author Eyuel
  */
 @Service
 @Transactional
-public class ProductServiceImpl implements IProductService{
+public class ProductServiceImpl implements IProductService {
 
     public ProductServiceImpl() {
     }
-    
+
     @Autowired
     private IProductRepository productRepository;
 
     @Override
     public Product findById(int productId) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return productRepository.findById(productId);
     }
 
     @Override
@@ -50,12 +50,12 @@ public class ProductServiceImpl implements IProductService{
 
     @Override
     public List<Product> findAllProduct() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return productRepository.findAllProduct();
     }
 
     @Override
     public List<Product> findAllProductByCategory() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return productRepository.findAllProduct();
     }
-    
+
 }

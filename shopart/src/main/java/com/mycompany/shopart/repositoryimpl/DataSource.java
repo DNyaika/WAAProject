@@ -7,7 +7,6 @@ package com.mycompany.shopart.repositoryimpl;
 
 import com.mycompany.shopart.model.Product;
 import com.mycompany.shopart.model.Category;
-import com.sun.org.apache.xml.internal.resolver.Catalog;
 import java.util.ArrayList;
 import java.util.List;
 
