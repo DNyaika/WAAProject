@@ -8,12 +8,17 @@ package com.mycompany.shopart.repositoryimpl;
 import com.mycompany.shopart.repository.AbstractDAO;
 import com.mycompany.shopart.repository.IOrderRepository;
 import javax.persistence.criteria.Order;
+import org.springframework.stereotype.Repository;
 
 /**
  *
  * @author eyuel
  */
+@Repository
 public class OrderRepositoryImpl extends AbstractDAO<Integer,Order> implements IOrderRepository{
+
+    public OrderRepositoryImpl() {
+    }
 
     @Override
     public Order findOrderById(int orderId) {

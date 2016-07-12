@@ -19,6 +19,9 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional 
 public class PaymentServiceImpl implements IPaymentRepository {
 
+    public PaymentServiceImpl() {
+    }
+
     @Autowired
     private IPaymentRepository paymentRepository;
     

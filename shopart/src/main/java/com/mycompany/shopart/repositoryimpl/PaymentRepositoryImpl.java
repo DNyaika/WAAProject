@@ -17,6 +17,9 @@ import org.springframework.stereotype.Repository;
 @Repository
 public class PaymentRepositoryImpl extends AbstractDAO<Integer,Payment> implements IPaymentRepository {
 
+    public PaymentRepositoryImpl() {
+    }
+
     @Override
     public Payment findPaymentById(int paymentId) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.

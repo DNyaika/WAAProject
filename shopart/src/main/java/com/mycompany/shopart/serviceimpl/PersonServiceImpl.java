@@ -20,6 +20,9 @@ import org.springframework.transaction.annotation.Transactional;
 @Service
 @Transactional
 public class PersonServiceImpl implements IPersonService {
+
+    public PersonServiceImpl() {
+    }
     
     @Autowired
     private IPersonRepository personRepository;

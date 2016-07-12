@@ -10,12 +10,20 @@ import com.mycompany.shopart.repository.IInventoryRepository;
 import com.mycompany.shopart.service.IInventoryService;
 import java.util.Collection;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  *
  * @author eyuel
  */
+@Service
+@Transactional
 public class InventoryServiceImpl implements IInventoryService {
+
+    public InventoryServiceImpl() {
+    }
+    
     @Autowired
     private IInventoryRepository inventoryRepository;
 

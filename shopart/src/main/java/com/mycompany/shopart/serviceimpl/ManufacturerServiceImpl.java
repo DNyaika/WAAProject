@@ -6,6 +6,7 @@
 package com.mycompany.shopart.serviceimpl;
 
 import com.mycompany.shopart.model.Manufacturer;
+import com.mycompany.shopart.repository.IManufacutrerRepository;
 import com.mycompany.shopart.service.IManufacturerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,8 +20,11 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional
 public class ManufacturerServiceImpl implements IManufacturerService {
 
+    public ManufacturerServiceImpl() {
+    }
+
     @Autowired
-    private IManufacturerService manufacturerRepository;
+    private IManufacutrerRepository manufacturerRepository;
     
     @Override
     public Manufacturer findById(int manufacturerId) {

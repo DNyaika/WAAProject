@@ -19,6 +19,10 @@ import org.springframework.transaction.annotation.Transactional;
 @Service
 @Transactional
 public class CategoryServiceImpl implements ICategoryService {
+
+    public CategoryServiceImpl() {
+    }
+    
     @Autowired
     private ICategoryRepository categoryRepository;
 

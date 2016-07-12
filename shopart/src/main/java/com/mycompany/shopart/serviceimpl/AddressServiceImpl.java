@@ -20,6 +20,9 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional
 public class AddressServiceImpl implements IAddressService{
 
+    public AddressServiceImpl() {
+    }
+
     @Autowired
     private IAddressRepository addressRepository;
             

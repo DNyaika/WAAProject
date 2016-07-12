@@ -7,12 +7,19 @@ package com.mycompany.shopart.serviceimpl;
 
 import com.mycompany.shopart.service.IOrderService;
 import javax.persistence.criteria.Order;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  *
  * @author eyuel
  */
+@Service
+@Transactional
 public class OrderServiceImpl implements IOrderService {
+
+    public OrderServiceImpl() {
+    }
 
     @Override
     public Order findOrderById(int orderId) {

@@ -21,6 +21,9 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional
 public class OrderlineServiceImpl implements IOrderlineService {
 
+    public OrderlineServiceImpl() {
+    }
+
     @Autowired
     private IOrderlineRepository orderLineRepsitory;
     

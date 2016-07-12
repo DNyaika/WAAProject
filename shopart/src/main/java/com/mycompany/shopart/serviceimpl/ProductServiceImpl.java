@@ -21,6 +21,9 @@ import org.springframework.transaction.annotation.Transactional;
 @Service
 @Transactional
 public class ProductServiceImpl implements IProductService{
+
+    public ProductServiceImpl() {
+    }
     
     @Autowired
     private IProductRepository productRepository;

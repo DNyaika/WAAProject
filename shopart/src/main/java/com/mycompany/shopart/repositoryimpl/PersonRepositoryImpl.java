@@ -8,12 +8,17 @@ package com.mycompany.shopart.repositoryimpl;
 import com.mycompany.shopart.model.Person;
 import com.mycompany.shopart.repository.AbstractDAO;
 import com.mycompany.shopart.repository.IPersonRepository;
+import org.springframework.stereotype.Repository;
 
 /**
  *
  * @author eyuel
  */
+@Repository
 public class PersonRepositoryImpl extends AbstractDAO<Integer,Person> implements IPersonRepository {
+
+    public PersonRepositoryImpl() {
+    }
 
     @Override
     public Person findPersonById(int id) {

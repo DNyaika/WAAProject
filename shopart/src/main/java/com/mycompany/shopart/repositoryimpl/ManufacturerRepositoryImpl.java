@@ -17,6 +17,9 @@ import org.springframework.stereotype.Repository;
 @Repository
 public class ManufacturerRepositoryImpl extends AbstractDAO<Integer,Manufacturer> implements IManufacutrerRepository {
 
+    public ManufacturerRepositoryImpl() {
+    }
+
     @Override
     public Manufacturer findById(int manufacturerId) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.

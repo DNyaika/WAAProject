@@ -18,6 +18,9 @@ import org.springframework.stereotype.Repository;
 @Repository
 public class OrderlineRepositoryImpl extends AbstractDAO<Integer,Orderline> implements IOrderlineRepository {
 
+    public OrderlineRepositoryImpl() {
+    }
+
     @Override
     public Orderline findOrderLineById(int orderLineId) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.

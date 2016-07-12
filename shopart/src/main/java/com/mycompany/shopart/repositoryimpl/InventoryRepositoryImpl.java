@@ -18,6 +18,9 @@ import org.springframework.stereotype.Repository;
 @Repository
 public class InventoryRepositoryImpl extends AbstractDAO<Integer,Inventory> implements IInventoryRepository {
 
+    public InventoryRepositoryImpl() {
+    }
+
     @Override
     public Inventory findInventoryById(int inventoryId) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.

@@ -17,6 +17,9 @@ import org.springframework.stereotype.Repository;
 @Repository
 public class AddressRepositoryImpl extends AbstractDAO<Integer,Address> implements IAddressRepository {
 
+    public AddressRepositoryImpl() {
+    }
+
     @Override
     public Address findById(int addressId) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
