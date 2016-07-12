@@ -5,10 +5,32 @@
  */
 package com.mycompany.shopart.service;
 
+import com.mycompany.shopart.model.Product;
+import java.util.List;
+
 /**
  *
  * @author davie
  */
-public class IProductService {
+public interface IProductService {
+    
+    // Find Product based on its ID
+    Product findById(int productId);
+    
+    // Add a Product
+    void addProduct(Product product);
+    
+    // Delete a Product
+    void deleteProduct(Product product);
+    
+    //Update a Product
+    void updateProduct(Product product);
+    
+    //Find all the Product
+    List<Product> findAllProduct();
+    
+    // Find All Products Based on category
+    List<Product> findAllProductByCategory();
+    
     
 }

@@ -5,10 +5,47 @@
  */
 package com.mycompany.shopart.repositoryimpl;
 
+import com.mycompany.shopart.model.Product;
+import com.mycompany.shopart.repository.AbstractDAO;
+import com.mycompany.shopart.repository.IProductRepository;
+import java.util.List;
+import org.springframework.stereotype.Repository;
+
 /**
  *
  * @author davie
  */
-public class ProductRepositoryImpl {
+@Repository
+public class ProductRepositoryImpl extends AbstractDAO<Integer,Product> implements IProductRepository {
+
+    @Override
+    public Product findById(int productId) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void addProduct(Product product) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void deleteProduct(Product product) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void updateProduct(Product product) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public List<Product> findAllProduct() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public List<Product> findAllProductByCategory(int categoryId) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }
