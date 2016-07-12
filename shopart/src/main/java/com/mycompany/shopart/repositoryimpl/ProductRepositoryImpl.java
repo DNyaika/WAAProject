@@ -8,7 +8,9 @@ package com.mycompany.shopart.repositoryimpl;
 import com.mycompany.shopart.model.Product;
 import com.mycompany.shopart.repository.AbstractDAO;
 import com.mycompany.shopart.repository.IProductRepository;
+import java.util.Arrays;
 import java.util.List;
+import org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -43,12 +45,12 @@ public class ProductRepositoryImpl extends AbstractDAO<Integer,Product> implemen
 
     @Override
     public List<Product> findAllProduct() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       return DataSource.getProducts();
     }
 
     @Override
     public List<Product> findAllProductByCategory(int categoryId) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return  null;
     }
     
 }
