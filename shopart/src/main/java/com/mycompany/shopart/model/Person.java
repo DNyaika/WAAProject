@@ -25,7 +25,7 @@ import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
- * @author eyuel
+ * @author 985072
  */
 @Entity
 @Table(name = "person")
@@ -75,7 +75,7 @@ public class Person implements Serializable {
     @OneToMany(mappedBy = "personId")
     private Collection<User> userCollection;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "personId")
-    private Collection<Orders> ordersCollection;
+    private Collection<Orders> order1Collection;
 
     public Person() {
     }
@@ -167,12 +167,12 @@ public class Person implements Serializable {
     }
 
     @XmlTransient
-    public Collection<Orders> getOrdersCollection() {
-        return ordersCollection;
+    public Collection<Orders> getOrder1Collection() {
+        return order1Collection;
     }
 
-    public void setOrdersCollection(Collection<Orders> ordersCollection) {
-        this.ordersCollection = ordersCollection;
+    public void setOrder1Collection(Collection<Orders> order1Collection) {
+        this.order1Collection = order1Collection;
     }
 
     @Override

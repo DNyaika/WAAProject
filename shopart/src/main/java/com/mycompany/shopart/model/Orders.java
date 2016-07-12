@@ -27,15 +27,15 @@ import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
- * @author eyuel
+ * @author 985072
  */
 @Entity
 @Table(name = "order")
 @XmlRootElement
 @NamedQueries({
-    @NamedQuery(name = "Orders.findAll", query = "SELECT o FROM Orders o"),
-    @NamedQuery(name = "Orders.findByOrderId", query = "SELECT o FROM Orders o WHERE o.orderId = :orderId"),
-    @NamedQuery(name = "Orders.findByDate", query = "SELECT o FROM Orders o WHERE o.date = :date")})
+    @NamedQuery(name = "Order1.findAll", query = "SELECT o FROM Order1 o"),
+    @NamedQuery(name = "Order1.findByOrderId", query = "SELECT o FROM Order1 o WHERE o.orderId = :orderId"),
+    @NamedQuery(name = "Order1.findByDate", query = "SELECT o FROM Order1 o WHERE o.date = :date")})
 public class Orders implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -115,7 +115,7 @@ public class Orders implements Serializable {
 
     @Override
     public String toString() {
-        return "com.mycompany.shopart.model.Orders[ orderId=" + orderId + " ]";
+        return "com.mycompany.shopart.model.Order1[ orderId=" + orderId + " ]";
     }
     
 }
