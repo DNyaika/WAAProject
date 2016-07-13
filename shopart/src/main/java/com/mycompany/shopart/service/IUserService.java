@@ -20,4 +20,7 @@ public interface IUserService {
     
     //Find User by email
     User findUserByEmail(String email);
+    
+    //Authentication 
+    User authenticateUser(User user);
 }
