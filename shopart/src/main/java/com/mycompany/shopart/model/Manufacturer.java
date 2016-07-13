@@ -27,11 +27,11 @@ import javax.xml.bind.annotation.XmlTransient;
 @Entity
 @Table(name = "manufacturer")
 @XmlRootElement
-@NamedQueries({
-    @NamedQuery(name = "Manufacturer.findAll", query = "SELECT m FROM Manufacturer m"),
-    @NamedQuery(name = "Manufacturer.findByManufacturerId", query = "SELECT m FROM Manufacturer m WHERE m.manufacturerId = :manufacturerId"),
-    @NamedQuery(name = "Manufacturer.findByManufacturerName", query = "SELECT m FROM Manufacturer m WHERE m.manufacturerName = :manufacturerName"),
-    @NamedQuery(name = "Manufacturer.findByManufacturerLogo", query = "SELECT m FROM Manufacturer m WHERE m.manufacturerLogo = :manufacturerLogo")})
+//@NamedQueries({
+//    @NamedQuery(name = "Manufacturer.findAll", query = "SELECT m FROM Manufacturer m"),
+//    @NamedQuery(name = "Manufacturer.findByManufacturerId", query = "SELECT m FROM Manufacturer m WHERE m.manufacturerId = :manufacturerId"),
+//    @NamedQuery(name = "Manufacturer.findByManufacturerName", query = "SELECT m FROM Manufacturer m WHERE m.manufacturerName = :manufacturerName"),
+//    @NamedQuery(name = "Manufacturer.findByManufacturerLogo", query = "SELECT m FROM Manufacturer m WHERE m.manufacturerLogo = :manufacturerLogo")})
 public class Manufacturer implements Serializable {
 
     private static final long serialVersionUID = 1L;

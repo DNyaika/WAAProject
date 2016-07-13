@@ -6,8 +6,10 @@
 package com.mycompany.shopart.repositoryimpl;
 
 import com.mycompany.shopart.model.Category;
+import com.mycompany.shopart.repository.AbstractDAO;
 import com.mycompany.shopart.repository.ICategoryRepository;
 import java.util.Collection;
+import org.hibernate.Transaction;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -15,7 +17,7 @@ import org.springframework.stereotype.Repository;
  * @author eyuel
  */
 @Repository
-public class CategoryRepositoryImpl implements ICategoryRepository{
+public class CategoryRepositoryImpl extends AbstractDAO<Integer, Category> implements ICategoryRepository {
 
     public CategoryRepositoryImpl() {
     }
@@ -32,7 +34,9 @@ public class CategoryRepositoryImpl implements ICategoryRepository{
 
     @Override
     public void addCategory(Category category) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Transaction trans = getSession().beginTransaction();
+        getSession().saveOrUpdate(category);
+        trans.commit();
     }
 
     @Override
@@ -49,5 +53,5 @@ public class CategoryRepositoryImpl implements ICategoryRepository{
     public Collection<Category> findAllCategory() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
+
 }

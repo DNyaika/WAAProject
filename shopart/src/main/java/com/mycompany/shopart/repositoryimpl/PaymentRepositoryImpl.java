@@ -15,7 +15,7 @@ import org.springframework.stereotype.Repository;
  * @author eyuel
  */
 @Repository
-public class PaymentRepositoryImpl extends AbstractDAO<Integer,Payment> implements IPaymentRepository {
+public class PaymentRepositoryImpl  implements IPaymentRepository {
 
     public PaymentRepositoryImpl() {
     }

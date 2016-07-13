@@ -15,7 +15,7 @@ import org.springframework.stereotype.Repository;
  * @author eyuel
  */
 @Repository
-public class PersonRepositoryImpl extends AbstractDAO<Integer,Person> implements IPersonRepository {
+public class PersonRepositoryImpl implements IPersonRepository {
 
     public PersonRepositoryImpl() {
     }

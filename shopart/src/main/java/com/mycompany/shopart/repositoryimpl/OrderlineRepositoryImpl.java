@@ -16,7 +16,7 @@ import org.springframework.stereotype.Repository;
  * @author eyuel
  */
 @Repository
-public class OrderlineRepositoryImpl extends AbstractDAO<Integer,Orderline> implements IOrderlineRepository {
+public class OrderlineRepositoryImpl  implements IOrderlineRepository {
 
     public OrderlineRepositoryImpl() {
     }

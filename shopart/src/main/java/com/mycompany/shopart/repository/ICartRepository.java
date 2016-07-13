@@ -5,6 +5,7 @@
  */
 package com.mycompany.shopart.repository;
 
+import com.mycompany.shopart.model.Category;
 import com.mycompany.shopart.model.Product;
 import com.mycompany.shopart.model.Shoppingcart;
 
@@ -25,5 +26,5 @@ public interface ICartRepository {
     //Add Product to Cart
     void addProductToCart(int cartId, int productId,int Qty);
     
-    
+
 }

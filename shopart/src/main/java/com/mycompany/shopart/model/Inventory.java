@@ -28,11 +28,11 @@ import javax.xml.bind.annotation.XmlRootElement;
 @Entity
 @Table(name = "inventory")
 @XmlRootElement
-@NamedQueries({
-    @NamedQuery(name = "Inventory.findAll", query = "SELECT i FROM Inventory i"),
-    @NamedQuery(name = "Inventory.findByInventoryId", query = "SELECT i FROM Inventory i WHERE i.inventoryId = :inventoryId"),
-    @NamedQuery(name = "Inventory.findByQuantity", query = "SELECT i FROM Inventory i WHERE i.quantity = :quantity"),
-    @NamedQuery(name = "Inventory.findByRecivedDate", query = "SELECT i FROM Inventory i WHERE i.recivedDate = :recivedDate")})
+//@NamedQueries({
+//    @NamedQuery(name = "Inventory.findAll", query = "SELECT i FROM Inventory i"),
+//    @NamedQuery(name = "Inventory.findByInventoryId", query = "SELECT i FROM Inventory i WHERE i.inventoryId = :inventoryId"),
+//    @NamedQuery(name = "Inventory.findByQuantity", query = "SELECT i FROM Inventory i WHERE i.quantity = :quantity"),
+//    @NamedQuery(name = "Inventory.findByRecivedDate", query = "SELECT i FROM Inventory i WHERE i.recivedDate = :recivedDate")})
 public class Inventory implements Serializable {
 
     private static final long serialVersionUID = 1L;

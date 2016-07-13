@@ -16,34 +16,21 @@ import org.springframework.beans.factory.annotation.Autowired;
  *
  * @author eyuel
  */
-public abstract class AbstractDAO<PK extends Serializable, T> {
-    private final Class<T> repositoryClass;  
-
+public class AbstractDAO<PK extends Serializable, T> {
+//    private final Class<T> repositoryClass;  
+//    {
+//         this.repositoryClass = (Class<T>)((ParameterizedType) this.getClass().getGenericSuperclass()).getActualTypeArguments()[1];
+//    }
     public AbstractDAO() {
-        this.repositoryClass = (Class<T>)((ParameterizedType) this.getClass().getGenericSuperclass()).getActualTypeArguments()[1];
     }
     
     @Autowired
     private SessionFactory sessionFactory;
-    
+
+    public void setSessionFactory(SessionFactory sessionFactory) {
+        this.sessionFactory = sessionFactory;
+    }
     protected Session getSession() {
         return sessionFactory.getCurrentSession();
-    }
-    
-        
-    public T getByKey(PK key){
-        return (T) getSession().get(repositoryClass, key);
-    }
-    
-    public void persist(T entity){
-        getSession().persist(entity);
-    }
-    
-    public void delete(T entity){
-        getSession().delete(entity);
-    }
-    
-    protected Criteria createEntityCriteria(){
-        return getSession().createCriteria(repositoryClass);
     }
 }

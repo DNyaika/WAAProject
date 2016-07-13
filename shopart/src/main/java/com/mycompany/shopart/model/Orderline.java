@@ -25,10 +25,10 @@ import javax.xml.bind.annotation.XmlRootElement;
 @Entity
 @Table(name = "orderline")
 @XmlRootElement
-@NamedQueries({
-    @NamedQuery(name = "Orderline.findAll", query = "SELECT o FROM Orderline o"),
-    @NamedQuery(name = "Orderline.findByOrderLineId", query = "SELECT o FROM Orderline o WHERE o.orderLineId = :orderLineId"),
-    @NamedQuery(name = "Orderline.findByOrderQty", query = "SELECT o FROM Orderline o WHERE o.orderQty = :orderQty")})
+//@NamedQueries({
+//    @NamedQuery(name = "Orderline.findAll", query = "SELECT o FROM Orderline o"),
+//    @NamedQuery(name = "Orderline.findByOrderLineId", query = "SELECT o FROM Orderline o WHERE o.orderLineId = :orderLineId"),
+//    @NamedQuery(name = "Orderline.findByOrderQty", query = "SELECT o FROM Orderline o WHERE o.orderQty = :orderQty")})
 public class Orderline implements Serializable {
 
     private static final long serialVersionUID = 1L;

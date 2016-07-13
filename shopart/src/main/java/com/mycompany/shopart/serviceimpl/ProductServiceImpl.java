@@ -35,7 +35,7 @@ public class ProductServiceImpl implements IProductService {
 
     @Override
     public void addProduct(Product product) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       productRepository.addProduct(product);
     }
 
     @Override

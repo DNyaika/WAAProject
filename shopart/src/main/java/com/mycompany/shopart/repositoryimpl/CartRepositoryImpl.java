@@ -5,10 +5,12 @@
  */
 package com.mycompany.shopart.repositoryimpl;
 
+import com.mycompany.shopart.model.Category;
 import com.mycompany.shopart.model.Product;
 import com.mycompany.shopart.model.Shoppingcart;
 import com.mycompany.shopart.repository.AbstractDAO;
 import com.mycompany.shopart.repository.ICartRepository;
+import org.hibernate.Transaction;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -16,7 +18,7 @@ import org.springframework.stereotype.Repository;
  * @author eyuel
  */
 @Repository
-public class CartRepositoryImpl extends AbstractDAO<Integer,Shoppingcart> implements ICartRepository {
+public class CartRepositoryImpl extends AbstractDAO<Integer, Category>  implements ICartRepository {
 
     @Override
     public Shoppingcart findCartById(int cartId) {
@@ -37,5 +39,5 @@ public class CartRepositoryImpl extends AbstractDAO<Integer,Shoppingcart> implem
     public void addProductToCart(int cartId, int productId, int Qty) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
+
 }

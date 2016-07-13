@@ -30,12 +30,12 @@ import javax.xml.bind.annotation.XmlRootElement;
 @Entity
 @Table(name = "payment")
 @XmlRootElement
-@NamedQueries({
-    @NamedQuery(name = "Payment.findAll", query = "SELECT p FROM Payment p"),
-    @NamedQuery(name = "Payment.findByPaymentId", query = "SELECT p FROM Payment p WHERE p.paymentId = :paymentId"),
-    @NamedQuery(name = "Payment.findByCardNumber", query = "SELECT p FROM Payment p WHERE p.cardNumber = :cardNumber"),
-    @NamedQuery(name = "Payment.findByCardType", query = "SELECT p FROM Payment p WHERE p.cardType = :cardType"),
-    @NamedQuery(name = "Payment.findByExpirationDate", query = "SELECT p FROM Payment p WHERE p.expirationDate = :expirationDate")})
+//@NamedQueries({
+//    @NamedQuery(name = "Payment.findAll", query = "SELECT p FROM Payment p"),
+//    @NamedQuery(name = "Payment.findByPaymentId", query = "SELECT p FROM Payment p WHERE p.paymentId = :paymentId"),
+//    @NamedQuery(name = "Payment.findByCardNumber", query = "SELECT p FROM Payment p WHERE p.cardNumber = :cardNumber"),
+//    @NamedQuery(name = "Payment.findByCardType", query = "SELECT p FROM Payment p WHERE p.cardType = :cardType"),
+//    @NamedQuery(name = "Payment.findByExpirationDate", query = "SELECT p FROM Payment p WHERE p.expirationDate = :expirationDate")})
 public class Payment implements Serializable {
 
     private static final long serialVersionUID = 1L;

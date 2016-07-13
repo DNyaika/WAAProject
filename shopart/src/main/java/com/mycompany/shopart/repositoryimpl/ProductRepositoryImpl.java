@@ -8,8 +8,10 @@ package com.mycompany.shopart.repositoryimpl;
 import com.mycompany.shopart.model.Product;
 import com.mycompany.shopart.repository.AbstractDAO;
 import com.mycompany.shopart.repository.IProductRepository;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import org.hibernate.Transaction;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -18,7 +20,7 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 //extends AbstractDAO<Integer, Product> 
-public class ProductRepositoryImpl implements IProductRepository {
+public class ProductRepositoryImpl extends AbstractDAO<Integer, Product> implements IProductRepository {
 
     public ProductRepositoryImpl() {
     }
@@ -30,7 +32,9 @@ public class ProductRepositoryImpl implements IProductRepository {
 
     @Override
     public void addProduct(Product product) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Transaction trans=getSession().beginTransaction();
+        getSession().persist(product);
+        trans.commit();
     }
 
     @Override

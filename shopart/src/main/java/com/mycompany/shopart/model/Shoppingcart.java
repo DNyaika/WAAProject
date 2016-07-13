@@ -25,10 +25,10 @@ import javax.xml.bind.annotation.XmlRootElement;
 @Entity
 @Table(name = "shoppingcart")
 @XmlRootElement
-@NamedQueries({
-    @NamedQuery(name = "Shoppingcart.findAll", query = "SELECT s FROM Shoppingcart s"),
-    @NamedQuery(name = "Shoppingcart.findByCartId", query = "SELECT s FROM Shoppingcart s WHERE s.cartId = :cartId"),
-    @NamedQuery(name = "Shoppingcart.findByProductQuantity", query = "SELECT s FROM Shoppingcart s WHERE s.productQuantity = :productQuantity")})
+//@NamedQueries({
+//    @NamedQuery(name = "Shoppingcart.findAll", query = "SELECT s FROM Shoppingcart s"),
+//    @NamedQuery(name = "Shoppingcart.findByCartId", query = "SELECT s FROM Shoppingcart s WHERE s.cartId = :cartId"),
+//    @NamedQuery(name = "Shoppingcart.findByProductQuantity", query = "SELECT s FROM Shoppingcart s WHERE s.productQuantity = :productQuantity")})
 public class Shoppingcart implements Serializable {
 
     private static final long serialVersionUID = 1L;

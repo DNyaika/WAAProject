@@ -15,7 +15,7 @@ import org.springframework.stereotype.Repository;
  * @author eyuel
  */
 @Repository
-public class ManufacturerRepositoryImpl extends AbstractDAO<Integer,Manufacturer> implements IManufacutrerRepository {
+public class ManufacturerRepositoryImpl implements IManufacutrerRepository {
 
     public ManufacturerRepositoryImpl() {
     }

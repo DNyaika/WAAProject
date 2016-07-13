@@ -38,7 +38,7 @@ public class CategoryServiceImpl implements ICategoryService {
 
     @Override
     public void addCategory(Category category) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       categoryRepository.addCategory(category);
     }
 
     @Override

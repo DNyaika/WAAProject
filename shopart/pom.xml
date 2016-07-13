@@ -109,7 +109,7 @@
             <artifactId>jstl</artifactId>
             <version>1.2</version>
         </dependency>
-            <dependency>
+        <dependency>
             <groupId>org.apache.tiles</groupId>
             <artifactId>tiles-core</artifactId>
             <version>3.0.5</version>

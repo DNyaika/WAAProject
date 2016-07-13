@@ -11,6 +11,7 @@ import javax.persistence.Basic;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
@@ -28,16 +29,18 @@ import javax.xml.bind.annotation.XmlTransient;
 @Entity
 @Table(name = "category")
 @XmlRootElement
-@NamedQueries({
-    @NamedQuery(name = "Category.findAll", query = "SELECT c FROM Category c"),
-    @NamedQuery(name = "Category.findByCategoryId", query = "SELECT c FROM Category c WHERE c.categoryId = :categoryId"),
-    @NamedQuery(name = "Category.findByCategoryName", query = "SELECT c FROM Category c WHERE c.categoryName = :categoryName")})
+//@NamedQueries({
+//    @NamedQuery(name = "Category.findAll", query = "SELECT c FROM Category c"),
+//    @NamedQuery(name = "Category.findByCategoryId", query = "SELECT c FROM Category c WHERE c.categoryId = :categoryId"),
+//    @NamedQuery(name = "Category.findByCategoryName", query = "SELECT c FROM Category c WHERE c.categoryName = :categoryName")})
 public class Category implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
+
     @Basic(optional = false)
     @NotNull
+    @GeneratedValue
     @Column(name = "CategoryId")
     private Integer categoryId;
     @Basic(optional = false)
@@ -109,5 +112,5 @@ public class Category implements Serializable {
     public String toString() {
         return "com.mycompany.shopart.model.Category[ categoryId=" + categoryId + " ]";
     }
-    
+
 }
