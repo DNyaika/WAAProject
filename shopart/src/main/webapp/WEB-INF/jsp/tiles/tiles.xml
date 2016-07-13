@@ -12,8 +12,12 @@
 		<put-attribute name="footer" value="/WEB-INF/jsp/template/footer.jsp" />
 	</definition>
 
-	<definition name="contact" extends="base.definition">
+	<definition name="productsTile" extends="base.definition">
 		<put-attribute name="body" value="/WEB-INF/jsp/products.jsp" />
 	</definition>
+        
+        <definition name="signupTile" extends="base.definition">
+            <put-attribute name="body" value="/WEB-INF/jsp/signup.jsp"/>
+        </definition>
 
 </tiles-definitions>

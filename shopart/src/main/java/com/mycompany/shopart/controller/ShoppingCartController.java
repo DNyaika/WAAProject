@@ -6,8 +6,8 @@
 package com.mycompany.shopart.controller;
 
 import com.mycompany.shopart.model.Product;
+import com.mycompany.shopart.model.User;
 import com.mycompany.shopart.service.IProductService;
-import com.mycompany.shopart.serviceimpl.ProductServiceImpl;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -24,9 +24,11 @@ public class ShoppingCartController {
     @Autowired
     IProductService productService;
     
-       @RequestMapping(value = {"/"}, method = RequestMethod.GET)
+    @RequestMapping(value = {"/"}, method = RequestMethod.GET)
     public String loadData(Model model) {
         List<Product> products = productService.findAllProduct();
+        User user = new User();
+        model.addAttribute("user",user);
         model.addAttribute("products",products);
         return "base.definition";
     }
