@@ -13,84 +13,9 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-<style>
-    body {
-        padding-top: 90px;
-    }
-    /* General sizing */
-    ul.dropdown-lr {
-        width: 300px;
-    }
+<spring:url value="/resources/css/header.css" var="headerCss"/>
+<link rel="stylesheet" href="${headerCss}"/>
 
-    /* mobile fix */
-    @media (max-width: 768px) {
-        .dropdown-lr h3 {
-            color: #eee;
-        }
-        .dropdown-lr label {
-            color: #eee;
-        }
-    }
-    
-#login-dp{
-    min-width: 250px;
-    padding: 14px 14px 0;
-    overflow:hidden;
-    background-color:rgba(255,255,255,.8);
-}
-#login-dp .help-block{
-    font-size:12px    
-}
-#login-dp .bottom{
-    background-color:rgba(255,255,255,.8);
-    border-top:1px solid #ddd;
-    clear:both;
-    padding:14px;
-}
-#login-dp .social-buttons{
-    margin:12px 0    
-}
-#login-dp .social-buttons a{
-    width: 49%;
-}
-#login-dp .form-group {
-    margin-bottom: 10px;
-}
-.btn-fb{
-    color: #fff;
-    background-color:#3b5998;
-}
-.btn-fb:hover{
-    color: #fff;
-    background-color:#496ebc 
-}
-.btn-tw{
-    color: #fff;
-    background-color:#55acee;
-}
-.btn-tw:hover{
-    color: #fff;
-    background-color:#59b5fa;
-}
-@media(max-width:768px){
-    #login-dp{
-        background-color: inherit;
-        color: #fff;
-    }
-    #login-dp .bottom{
-        background-color: inherit;
-        border-top:0 none;
-    }
-    #disableSetting {
-        display: none;
-    }
-    
-    #enableSetting {
-        display: list-item;
-    }
-}
-
-</style>
 <section >
     <div class="jumbotron" >
         <div class="container">
@@ -153,7 +78,8 @@
                                     </div>
                                     <input type="hidden" class="hide" name="token" id="token" value="7c6f19960d63f53fcd05c3e0cbc434c0">
                                 </form:form>
-                                <div class="bottom text-center">New here ? <a href="#"><b>Join Us</b></a></div>
+                                <spring:url value="/signup" var="signupURL" />
+                                <div class="bottom text-center">New here ? <a href=${signupURL}><b>Join Us</b></a></div>
                             </div>
                         </ul>
                     </li>

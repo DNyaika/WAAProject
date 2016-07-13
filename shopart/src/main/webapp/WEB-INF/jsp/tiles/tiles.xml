@@ -19,5 +19,9 @@
         <definition name="signupTile" extends="base.definition">
             <put-attribute name="body" value="/WEB-INF/jsp/signup.jsp"/>
         </definition>
+        
+        <definition name="shipmentTile" extends="base.definition">
+            <put-attribute name="body" value="/WEB-INF/jsp/shipment.jsp"/>
+        </definition>
 
 </tiles-definitions>

@@ -16,61 +16,61 @@
         <spring:url value="/resources/css/signup.css" var="signupCSS" />
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
         <link href="${signupCSS}" rel="stylesheet" />
-        <title>Signup</title>
+        <title>Shipment</title>
     </head>
     <body>
         <div class="container">
             <div class="row main">
                                 
                 <div class="main-login main-center">
-                    <h1>Signup</h1>
-                    <spring:url value="/shipment" var="signupURL"/>
-                    <form:form class="form-horizontal" method="post" action="${signupURL}">
+                    <h1>Shipping and Billing Address</h1>
+                    <spring:url value="/signup" var="signupURL"/>
+                    <form:form class="form-horizontal" method="post" action="#">
                         <div class="form-group">
-                            <label for="name" class="cols-sm-2 control-label">First Name</label>
+                            <label for="street" class="cols-sm-2 control-label">Street</label>
                             <div class="cols-sm-10">
                                 <div class="input-group">
                                     <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-                                    <form:input type="text" class="form-control" path="name" name="name" id="name"  placeholder="Enter your Name"/>
+                                    <form:input type="text" class="form-control" path="street" name="street" id="street"  placeholder="Enter your Street"/>
 				</div>
 			    </div>
                             <div class=""
-                                <form:errors path="userId" cssClass="text-danger">Error test</form:errors>
+                                <form:errors path="street" cssClass="text-danger">Error test</form:errors>
                             </div>
 			</div>
                         
                         <div class="form-group">
-                            <label for="name" class="cols-sm-2 control-label">Last Name</label>
+                            <label for="zip" class="cols-sm-2 control-label">ZIP Code</label>
                             <div class="cols-sm-10">
                                 <div class="input-group">
                                     <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-                                    <form:input type="text" class="form-control" path="name" name="name" id="name"  placeholder="Enter your Name"/>
+                                    <form:input type="text" class="form-control" path="zip" name="zip" id="zip"  placeholder="Enter your Zip"/>
 				</div>
 			    </div>
                             <div class=""
-                                <form:errors path="name" cssClass="text-danger"/>
+                                <form:errors path="zip" cssClass="text-danger"/>
                             </div>
 			</div>
 
 			<div class="form-group">
-                            <label for="email" class="cols-sm-2 control-label">Email</label>
+                            <label for="state" class="cols-sm-2 control-label">State</label>
                             <div class="cols-sm-10">
                                 <div class="input-group">
                                     <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
-                                    <form:input type="text" class="form-control" path="email" name="email" id="email"  placeholder="Enter your Email"/>
+                                    <form:input type="text" class="form-control" path="state" name="state" id="state"  placeholder="Enter your Email"/>
                                 </div>
                             </div>
                             <div class=""
-                                <form:errors path="email" cssClass="text-danger"/>
+                                <form:errors path="state" cssClass="text-danger"/>
                             </div>
 			</div>
                         
                         <div class="form-group">
-                            <label for="username" class="cols-sm-2 control-label">Username</label>
+                            <label for="username" class="cols-sm-2 control-label">Phone</label>
                             <div class="cols-sm-10">
                                 <div class="input-group">
                                     <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
-                                    <form:input type="text" class="form-control" path="username" name="username" id="username"  placeholder="Enter your Username"/>
+                                    <form:input type="text" class="form-control" path="phone" name="phone" id="username"  placeholder="Enter your Username"/>
                                 </div>
                             </div>
                             <div class=""
