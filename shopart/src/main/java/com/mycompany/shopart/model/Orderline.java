@@ -9,6 +9,8 @@ import java.io.Serializable;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -33,9 +35,8 @@ public class Orderline implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
-    @Basic(optional = false)
-    @NotNull
-    @Column(name = "OrderLineId")
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "OrderLineId", nullable = false, unique = true)
     private Integer orderLineId;
     @Column(name = "OrderQty")
     private Integer orderQty;
@@ -109,5 +110,5 @@ public class Orderline implements Serializable {
     public String toString() {
         return "com.mycompany.shopart.model.Orderline[ orderLineId=" + orderLineId + " ]";
     }
-    
+
 }

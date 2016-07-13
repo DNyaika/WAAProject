@@ -12,6 +12,7 @@ import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
@@ -27,7 +28,7 @@ import javax.xml.bind.annotation.XmlTransient;
  * @author 985072
  */
 @Entity
-@Table(name = "category")
+@Table(name = "Category")
 @XmlRootElement
 //@NamedQueries({
 //    @NamedQuery(name = "Category.findAll", query = "SELECT c FROM Category c"),
@@ -37,12 +38,10 @@ public class Category implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
-
-    @Basic(optional = false)
-    @NotNull
-    @GeneratedValue
-    @Column(name = "CategoryId")
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "CategoryId", nullable = false, unique = true)
     private Integer categoryId;
+
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 45)
@@ -58,16 +57,16 @@ public class Category implements Serializable {
         this.categoryId = categoryId;
     }
 
-    public Category(Integer categoryId, String categoryName) {
+    public Category(int categoryId, String categoryName) {
         this.categoryId = categoryId;
         this.categoryName = categoryName;
     }
 
-    public Integer getCategoryId() {
+    public int getCategoryId() {
         return categoryId;
     }
 
-    public void setCategoryId(Integer categoryId) {
+    public void setCategoryId(int categoryId) {
         this.categoryId = categoryId;
     }
 

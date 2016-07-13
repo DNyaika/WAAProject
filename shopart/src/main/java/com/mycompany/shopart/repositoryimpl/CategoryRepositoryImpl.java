@@ -11,6 +11,7 @@ import com.mycompany.shopart.repository.ICategoryRepository;
 import java.util.Collection;
 import org.hibernate.Transaction;
 import org.springframework.stereotype.Repository;
+import org.hibernate.Session;
 
 /**
  *
@@ -18,40 +19,43 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public class CategoryRepositoryImpl extends AbstractDAO<Integer, Category> implements ICategoryRepository {
-
+    
     public CategoryRepositoryImpl() {
     }
-
+    
     @Override
     public Category findCategoryByName(String categoryName) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
+    
     @Override
     public Category findeCategoryById(int categoryId) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
+    
     @Override
     public void addCategory(Category category) {
-        Transaction trans = getSession().beginTransaction();
-        getSession().saveOrUpdate(category);
-        trans.commit();
+//        Session session = getSession();
+//        Transaction trans = session.beginTransaction();
+//        session.saveOrUpdate(category);
+//        trans.commit();
+//        session.close();
+        getSession().save(category);
     }
-
+    
     @Override
     public void updateCategory(Category category) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
+    
     @Override
     public void deleteCategory(Category category) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
+    
     @Override
     public Collection<Category> findAllCategory() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
+    
 }

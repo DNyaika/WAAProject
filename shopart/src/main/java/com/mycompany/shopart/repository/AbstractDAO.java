@@ -17,10 +17,7 @@ import org.springframework.beans.factory.annotation.Autowired;
  * @author eyuel
  */
 public class AbstractDAO<PK extends Serializable, T> {
-//    private final Class<T> repositoryClass;  
-//    {
-//         this.repositoryClass = (Class<T>)((ParameterizedType) this.getClass().getGenericSuperclass()).getActualTypeArguments()[1];
-//    }
+
     public AbstractDAO() {
     }
     

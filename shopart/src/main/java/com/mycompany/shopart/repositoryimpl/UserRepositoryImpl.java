@@ -16,7 +16,7 @@ import org.springframework.stereotype.Repository;
  * @author eyuel
  */
 @Repository
-public class UserRepositoryImpl extends AbstractDAO<Integer,User> implements IUserRepository {
+public class UserRepositoryImpl extends AbstractDAO implements IUserRepository {
 
     @Override
     public User findUserById(int userId) {

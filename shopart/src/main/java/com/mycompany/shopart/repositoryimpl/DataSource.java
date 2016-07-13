@@ -30,7 +30,7 @@ public class DataSource {
     private static final Category category;
 
     static {
-        category = new Category();
+        category = new Category(1);
         category.setCategoryName("Electronics");
 //products
         samSungGalaxyS2 = new Product();
@@ -70,7 +70,7 @@ public class DataSource {
         productsList.add(samSungGalaxyS4);
         productsList.add(samSungGalaxyNote3);
 
-        category.setProductCollection(productsList);
+//        category.setProductCollection(productsList);
     }
 
     public static List<Product> getProducts() {

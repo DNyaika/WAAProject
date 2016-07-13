@@ -10,6 +10,8 @@ import java.util.Collection;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -27,7 +29,7 @@ import javax.xml.bind.annotation.XmlTransient;
  * @author 985072
  */
 @Entity
-@Table(name = "product")
+@Table(name = "Product")
 @XmlRootElement
 //@NamedQueries({
 //    @NamedQuery(name = "Product.findAll", query = "SELECT p FROM Product p"),
@@ -40,9 +42,9 @@ public class Product implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
-    @Basic(optional = false)
-    @NotNull
-    @Column(name = "ProductId")
+ @GeneratedValue(strategy = GenerationType.AUTO)
+     
+    @Column(name = "ProductId",nullable = false, unique = true)
     private Integer productId;
     @Size(max = 45)
     @Column(name = "ProductName")

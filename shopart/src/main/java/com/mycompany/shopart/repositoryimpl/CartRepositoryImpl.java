@@ -18,7 +18,7 @@ import org.springframework.stereotype.Repository;
  * @author eyuel
  */
 @Repository
-public class CartRepositoryImpl extends AbstractDAO<Integer, Category>  implements ICartRepository {
+public class CartRepositoryImpl extends AbstractDAO  implements ICartRepository {
 
     @Override
     public Shoppingcart findCartById(int cartId) {

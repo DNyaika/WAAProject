@@ -20,7 +20,7 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 //extends AbstractDAO<Integer, Product> 
-public class ProductRepositoryImpl extends AbstractDAO<Integer, Product> implements IProductRepository {
+public class ProductRepositoryImpl extends AbstractDAO implements IProductRepository {
 
     public ProductRepositoryImpl() {
     }
@@ -54,10 +54,11 @@ public class ProductRepositoryImpl extends AbstractDAO<Integer, Product> impleme
 
     @Override
     public List<Product> findAllProductByCategory(int categoryId) {
-        List<Product> products = new ArrayList<>();
-        for (Product product : DataSource.getProductByCatalogId(categoryId).getProductCollection()) {
-            products.add(product);
-        }
-        return products;
+//        List<Product> products = new ArrayList<>();
+//        for (Product product : DataSource.getProductByCatalogId(categoryId).getProductCollection()) {
+//            products.add(product);
+//        }
+//        return products;
+return null;
     }
 }
