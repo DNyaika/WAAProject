@@ -5,6 +5,7 @@
  */
 package com.mycompany.shopart.controller;
 
+import com.mycompany.shopart.beans.UserInfoBean;
 import com.mycompany.shopart.model.User;
 import com.mycompany.shopart.service.IAddressService;
 import com.mycompany.shopart.service.IPersonService;
@@ -12,6 +13,8 @@ import com.mycompany.shopart.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -32,7 +35,18 @@ public class SignupController {
     @RequestMapping(method = RequestMethod.GET)
     public String getSignupForm(Model model) {
         model.addAttribute("user", new User());
+        model.addAttribute("userInfoBean", new UserInfoBean());
         return "signupTile";
+    }
+    
+    @RequestMapping(method = RequestMethod.POST)
+    public String proccessSignUp(@ModelAttribute("userInfoBean") UserInfoBean userInfoBean,
+            Model model,BindingResult result) {
+        if(result.hasErrors()) {
+            return "redirect:signup";
+        }
+        model.addAttribute("user", new User());
+        return "productsTile";
     }
     
 }

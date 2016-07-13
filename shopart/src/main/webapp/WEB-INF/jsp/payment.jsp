@@ -31,7 +31,7 @@
             <div class="row main">
                                 
                 <div class="main-login main-center">
-                    <h1>Shipping and Billing Address</h1>
+                    <h1>Payment</h1>
                     <spring:url value="/signup" var="signupURL"/>
                     <form:form class="form-horizontal" modelAttribute="userInfoBean" method="post" action="#">
                         <div class="form-group">
