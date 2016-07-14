@@ -9,6 +9,7 @@ import com.mycompany.shopart.model.Category;
 import com.mycompany.shopart.repository.AbstractDAO;
 import com.mycompany.shopart.repository.ICategoryRepository;
 import java.util.Collection;
+import java.util.List;
 import org.hibernate.Transaction;
 import org.springframework.stereotype.Repository;
 import org.hibernate.Session;
@@ -53,9 +54,11 @@ public class CategoryRepositoryImpl extends AbstractDAO<Integer, Category> imple
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
-    @Override
-    public Collection<Category> findAllCategory() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+
+    
+      @Override
+    public List<Category> findAllCategory() {
+       return DataSource.getAllCategories();
     }
     
 }

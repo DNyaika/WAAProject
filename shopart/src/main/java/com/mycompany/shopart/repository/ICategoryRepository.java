@@ -7,6 +7,7 @@ package com.mycompany.shopart.repository;
 
 import com.mycompany.shopart.model.Category;
 import java.util.Collection;
+import java.util.List;
 
 /**
  *
@@ -30,5 +31,5 @@ public interface ICategoryRepository {
     void deleteCategory(Category category);
     
     // Find All Category
-    Collection<Category> findAllCategory();
+    List<Category> findAllCategory();
 }

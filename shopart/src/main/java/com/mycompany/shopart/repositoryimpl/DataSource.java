@@ -8,6 +8,7 @@ package com.mycompany.shopart.repositoryimpl;
 import com.mycompany.shopart.model.Product;
 import com.mycompany.shopart.model.Category;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -16,7 +17,7 @@ import java.util.List;
  */
 public class DataSource {
 
-//Products
+//Phones
     private static final Product samSungGalaxyS4;
     private static final Product samSungGalaxyS3;
     private static final Product samSungGalaxyS2;
@@ -24,15 +25,37 @@ public class DataSource {
     private static Product samSungGalaxyNote6;
     private static Product samSungGalaxyNote4;
     private static final Product samSungGalaxyNote3;
+    //Laptops
+    private static Product accer;
+    private static Product dell;
+    private static Product ph;
+    private static Product macbook;
+
+    //cars
+    private static Product toyota;
+    private static Product benz;
+    private static Product accura;
+    private static Product rav4;
+
     private static final List<Product> productsList = new ArrayList<>();
 
     //Category
     private static final Category category;
+    private static Category categoryLaptopps;
+    private static Category categoryCars;
 
     static {
+        //----phones
         category = new Category(1);
         category.setCategoryName("Electronics");
-//products
+        //-----laptops
+        categoryLaptopps = new Category(2);
+        category.setCategoryName("Laptops");
+        //---cars
+        categoryCars = new Category(3);
+        category.setCategoryName("Cars");
+
+//--------Phones-----------
         samSungGalaxyS2 = new Product();
         samSungGalaxyS2.setPrice(100);
         samSungGalaxyS2.setProductId(1);
@@ -65,10 +88,84 @@ public class DataSource {
         samSungGalaxyNote3.setModel("Note3");
         samSungGalaxyNote3.setProductCategory(category);
 
+        //----Cars
+        toyota = new Product();
+        toyota.setPrice(34);
+        toyota.setModel("2001");
+        toyota.setProductId(1);
+        toyota.setPrice(300);
+        toyota.setProductName("Toyota");
+        toyota.setProductImage("toyota");
+
+        rav4 = new Product();
+        rav4.setPrice(56);
+        rav4.setModel("2001");
+        rav4.setProductId(2);
+        rav4.setPrice(300);
+        rav4.setProductName("rav4");
+        rav4.setProductImage("rav4");
+
+        benz = new Product();
+        benz.setPrice(180);
+        benz.setModel("2001");
+        benz.setProductId(3);
+        benz.setPrice(300);
+        benz.setProductName("benz");
+        benz.setProductImage("benz");
+
+        accura = new Product();
+        accura.setPrice(335);
+        accura.setModel("2001");
+        accura.setProductId(4);
+        accura.setPrice(300);
+        accura.setProductName("accura");
+        accura.setProductImage("accura");
+
+        //-----laptops
+        accer = new Product();
+        accer.setPrice(156);
+        accer.setModel("2001");
+        accer.setProductId(1);
+        accer.setPrice(300);
+        accer.setProductName("accer");
+        accer.setProductImage("accer");
+
+        dell = new Product();
+        dell.setPrice(156);
+        dell.setModel("2001");
+        dell.setProductId(2);
+        dell.setPrice(300);
+        dell.setProductName("dell");
+        dell.setProductImage("dell");
+
+        ph = new Product();
+        ph.setPrice(156);
+        ph.setModel("2001");
+        ph.setProductId(3);
+        ph.setPrice(300);
+        ph.setProductName("hp");
+        ph.setProductImage("hp");
+
+        macbook = new Product();
+        macbook.setPrice(156);
+        macbook.setModel("2001");
+        macbook.setProductId(4);
+        macbook.setPrice(300);
+        macbook.setProductName("macbook");
+        macbook.setProductImage("macbook");
+
         productsList.add(samSungGalaxyS2);
         productsList.add(samSungGalaxyS3);
         productsList.add(samSungGalaxyS4);
         productsList.add(samSungGalaxyNote3);
+        productsList.add(accer);
+        productsList.add(dell);
+        productsList.add(ph);
+        productsList.add(macbook);
+        productsList.add(benz);
+        productsList.add(accura);
+        productsList.add(rav4);
+        productsList.add(toyota);
 
 //        category.setProductCollection(productsList);
     }
@@ -85,9 +182,13 @@ public class DataSource {
         }
         return null;
     }
-    
-    public static Category getProductByCatalogId(int id){
+
+    public static Category getProductByCatalogId(int id) {
         return category;
     }
-    
+
+    public static List<Category> getAllCategories() {
+        return Arrays.asList(category,categoryLaptopps,categoryCars);
+    }
+
 }

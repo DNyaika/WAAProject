@@ -5,6 +5,7 @@
  */
 package com.mycompany.shopart.controller;
 
+import com.mycompany.shopart.model.Category;
 import com.mycompany.shopart.model.Product;
 import com.mycompany.shopart.model.User;
 import com.mycompany.shopart.service.IProductService;
@@ -24,21 +25,21 @@ import com.mycompany.shopart.service.ICategoryService;
  */
 @Controller
 public class ShoppingCartController {
+
     @Autowired
     IProductService productService;
-    
+
     @Autowired
     ICategoryService cartegoryService;
-    
+
     @RequestMapping(value = {"/"}, method = RequestMethod.GET)
     public String loadData(Model model) {
-////        for(Product product:DataSource.getProducts()){
-            cartegoryService.addCategory(DataSource.getProducts().get(0).getProductCategory());
-////        }
-        List<Product> products = productService.findAllProduct();
+        List<Category> categories = cartegoryService.getCategories();
         User user = new User();
-        model.addAttribute("user",user);
-        model.addAttribute("products",products);
+        model.addAttribute("categories",categories);
+        model.addAttribute("user", user);
+        model.addAttribute("text","test");
+        model.addAttribute("products", categories.get(0).getProductCollection());
         return "base.definition";
     }
 }
