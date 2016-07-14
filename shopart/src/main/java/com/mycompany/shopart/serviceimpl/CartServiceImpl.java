@@ -6,7 +6,8 @@
 package com.mycompany.shopart.serviceimpl;
 
 import com.mycompany.shopart.model.Product;
-import com.mycompany.shopart.model.Shoppingcart;
+import com.mycompany.shopart.model.ShoppingCart;
+import com.mycompany.shopart.model.ShoppingcartItem;
 import com.mycompany.shopart.repository.ICartRepository;
 import com.mycompany.shopart.service.ICartService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,12 +26,12 @@ public class CartServiceImpl implements ICartService {
     private ICartRepository cartRepository;
     
     @Override
-    public Shoppingcart findCartById(int cartId) {
+    public ShoppingcartItem findCartById(int cartId) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public Shoppingcart findCartByPersonId(int personId) {
+    public ShoppingcartItem findCartByPersonId(int personId) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
@@ -42,6 +43,16 @@ public class CartServiceImpl implements ICartService {
     @Override
     public void addProductToCart(int cartId, int productId, int Qty) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public ShoppingCart getInstance() {
+        return cartRepository.getInstance();
+    }
+
+    @Override
+    public ShoppingcartItem getCartItemInstance() {
+        return cartRepository.getCartItemInstance();
     }
     
 }

@@ -33,15 +33,17 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="">ShopArt</a>
+                <a class="navbar-brand" href='<c:url value="/" />'>ShopArt</a>
             </div>
             <div id="navbar" class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="">Home</a></li>
-                    <li><a href="">About</a></li>
+                    <li class="active"><a href='<c:url value="/" />'>Home</a></li>
+                    <li><a href='<c:url value="/thankyou" />'>About</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li class="active"><a href="">ShoppingCart[${item}]</a></li>
+                 
+                    <li class="active"><a   class="glyphicon glyphicon-shopping-cart" href="<c:url value='/showcart'/>">ShoppingCart[${liveshoppingcart.totalItems}]</a></li>
+                
                     <li class="dropdown">
                         <a href="" class="dropdown-toggle" data-toggle="dropdown">Login <span class="caret"></span></a>
                         <ul class="dropdown-menu dropdown-lr animated flipInX" role="menu">

@@ -66,7 +66,7 @@ public class Product implements Serializable {
     @ManyToOne(optional = false)
     private Category productCategory;
     @OneToMany(mappedBy = "productId")
-    private Collection<Shoppingcart> shoppingcartCollection;
+    private Collection<ShoppingcartItem> shoppingcartCollection;
     @OneToMany(mappedBy = "productId")
     private Collection<Inventory> inventoryCollection;
 
@@ -143,11 +143,11 @@ public class Product implements Serializable {
     }
 
     @XmlTransient
-    public Collection<Shoppingcart> getShoppingcartCollection() {
+    public Collection<ShoppingcartItem> getShoppingcartCollection() {
         return shoppingcartCollection;
     }
 
-    public void setShoppingcartCollection(Collection<Shoppingcart> shoppingcartCollection) {
+    public void setShoppingcartCollection(Collection<ShoppingcartItem> shoppingcartCollection) {
         this.shoppingcartCollection = shoppingcartCollection;
     }
 

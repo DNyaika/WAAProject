@@ -70,7 +70,7 @@ public class Person implements Serializable {
     @ManyToOne
     private Address address;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "personId")
-    private Collection<Shoppingcart> shoppingcartCollection;
+    private Collection<ShoppingcartItem> shoppingcartCollection;
     @OneToMany(mappedBy = "cardHoldersId")
     private Collection<Payment> paymentCollection;
     @OneToMany(mappedBy = "personId")
@@ -141,11 +141,11 @@ public class Person implements Serializable {
     }
 
     @XmlTransient
-    public Collection<Shoppingcart> getShoppingcartCollection() {
+    public Collection<ShoppingcartItem> getShoppingcartCollection() {
         return shoppingcartCollection;
     }
 
-    public void setShoppingcartCollection(Collection<Shoppingcart> shoppingcartCollection) {
+    public void setShoppingcartCollection(Collection<ShoppingcartItem> shoppingcartCollection) {
         this.shoppingcartCollection = shoppingcartCollection;
     }
 

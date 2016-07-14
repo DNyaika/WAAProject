@@ -7,7 +7,8 @@ package com.mycompany.shopart.repository;
 
 import com.mycompany.shopart.model.Category;
 import com.mycompany.shopart.model.Product;
-import com.mycompany.shopart.model.Shoppingcart;
+import com.mycompany.shopart.model.ShoppingCart;
+import com.mycompany.shopart.model.ShoppingcartItem;
 
 /**
  *
@@ -15,16 +16,20 @@ import com.mycompany.shopart.model.Shoppingcart;
  */
 public interface ICartRepository {
     //Find Cart By Id
-    Shoppingcart findCartById(int cartId);
+    ShoppingcartItem findCartById(int cartId);
     
     //Find Cart By Person Id 
-    Shoppingcart findCartByPersonId(int personId);
+    ShoppingcartItem findCartByPersonId(int personId);
     
     //Find All Products in Cart
     Product findAllProductInCart(int cartId);
     
     //Add Product to Cart
     void addProductToCart(int cartId, int productId,int Qty);
+    
+    public ShoppingCart getInstance();
+    
+    public ShoppingcartItem getCartItemInstance();
     
 
 }

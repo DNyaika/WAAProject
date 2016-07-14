@@ -19,7 +19,7 @@ import org.hibernate.Session;
  * @author eyuel
  */
 @Repository
-public class CategoryRepositoryImpl extends AbstractDAO<Integer, Category> implements ICategoryRepository {
+public class CategoryRepositoryImpl implements ICategoryRepository {
 
     public CategoryRepositoryImpl() {
     }
@@ -46,7 +46,7 @@ public class CategoryRepositoryImpl extends AbstractDAO<Integer, Category> imple
 //        session.saveOrUpdate(category);
 //        trans.commit();
 //        session.close();
-        getSession().save(category);
+        //getSession().save(category);
     }
 
     @Override

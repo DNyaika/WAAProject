@@ -6,23 +6,29 @@
 package com.mycompany.shopart.service;
 
 import com.mycompany.shopart.model.Product;
-import com.mycompany.shopart.model.Shoppingcart;
+import com.mycompany.shopart.model.ShoppingCart;
+import com.mycompany.shopart.model.ShoppingcartItem;
 
 /**
  *
  * @author eyuel
  */
 public interface ICartService {
+
     //Find Cart By Id
-    Shoppingcart findCartById(int cartId);
-    
+    ShoppingcartItem findCartById(int cartId);
+
     //Find Cart By Person Id 
-    Shoppingcart findCartByPersonId(int personId);
-    
+    ShoppingcartItem findCartByPersonId(int personId);
+
     //Find All Products in Cart
     Product findAllProductInCart(int cartId);
-    
+
     //Add Product to Cart
-    void addProductToCart(int cartId, int productId,int Qty);
-    
+    void addProductToCart(int cartId, int productId, int Qty);
+
+    public ShoppingCart getInstance();
+
+    public ShoppingcartItem getCartItemInstance();
+
 }

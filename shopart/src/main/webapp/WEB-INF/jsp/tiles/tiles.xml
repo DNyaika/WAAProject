@@ -3,29 +3,37 @@
        "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
 <tiles-definitions>
-	<definition name="base.definition"
-		template="/WEB-INF/jsp/layout/mainwindow.jsp">
-		<put-attribute name="title" value="" />
-		<put-attribute name="header" value="/WEB-INF/jsp/template/header.jsp" />
-		<put-attribute name="menu" value="/WEB-INF/jsp/template/menu.jsp" />
-		<put-attribute name="body" value="/WEB-INF/jsp/products.jsp" />
-		<put-attribute name="footer" value="/WEB-INF/jsp/template/footer.jsp" />
-	</definition>
+    <definition name="base.definition"
+                template="/WEB-INF/jsp/layout/mainwindow.jsp">
+        <put-attribute name="title" value="" />
+        <put-attribute name="header" value="/WEB-INF/jsp/template/header.jsp" />
+        <put-attribute name="menu" value="/WEB-INF/jsp/template/menu.jsp" />
+        <put-attribute name="body" value="/WEB-INF/jsp/products.jsp" />
+        <put-attribute name="footer" value="/WEB-INF/jsp/template/footer.jsp" />
+    </definition>
 
-	<definition name="productsTile" extends="base.definition">
-		<put-attribute name="body" value="/WEB-INF/jsp/products.jsp" />
-	</definition>
+    <definition name="productsTile" extends="base.definition">
+        <put-attribute name="body" value="/WEB-INF/jsp/products.jsp" />
+    </definition>
         
-        <definition name="producttile" extends="base.definition">
-		<put-attribute name="body" value="/WEB-INF/jsp/product.jsp" />
-	</definition>
+    <definition name="producttile" extends="base.definition">
+        <put-attribute name="body" value="/WEB-INF/jsp/product.jsp" />
+    </definition>
         
-        <definition name="signupTile" extends="base.definition">
-            <put-attribute name="body" value="/WEB-INF/jsp/signup.jsp"/>
-        </definition>
+    <definition name="signupTile" extends="base.definition">
+        <put-attribute name="body" value="/WEB-INF/jsp/signup.jsp"/>
+    </definition>
         
-        <definition name="shipmentTile" extends="base.definition">
-            <put-attribute name="body" value="/WEB-INF/jsp/shipment.jsp"/>
-        </definition>
+    <definition name="shipmentTile" extends="base.definition">
+        <put-attribute name="body" value="/WEB-INF/jsp/shipment.jsp"/>
+    </definition>
+        
+    <definition name="thankyouTile" extends="base.definition">
+        <put-attribute name="body" value="/WEB-INF/jsp/thankyou.jsp"/>
+    </definition>
+    
+    <definition name="cartttile" extends="base.definition">
+        <put-attribute name="body" value="/WEB-INF/jsp/cart.jsp" />
+    </definition>
 
 </tiles-definitions>

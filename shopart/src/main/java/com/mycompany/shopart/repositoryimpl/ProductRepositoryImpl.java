@@ -23,7 +23,7 @@ import com.mycompany.shopart.repositoryimpl.DataSource;
  */
 @Repository
 //extends AbstractDAO<Integer, Product> 
-public class ProductRepositoryImpl extends AbstractDAO implements IProductRepository {
+public class ProductRepositoryImpl  implements IProductRepository {
 
     public ProductRepositoryImpl() {
     }
@@ -42,9 +42,9 @@ public class ProductRepositoryImpl extends AbstractDAO implements IProductReposi
 
     @Override
     public void addProduct(Product product) {
-        Transaction trans = getSession().beginTransaction();
-        getSession().persist(product);
-        trans.commit();
+//        Transaction trans = getSession().beginTransaction();
+//        getSession().persist(product);
+//        trans.commit();
     }
 
     @Override
