@@ -37,9 +37,9 @@ public class User implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    //@GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "UserId", nullable = false, unique = true)
-    private Integer userId;
+    private String userId;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 45)
@@ -55,20 +55,20 @@ public class User implements Serializable {
     public User() {
     }
 
-    public User(Integer userId) {
+    public User(String userId) {
         this.userId = userId;
     }
 
-    public User(Integer userId, String password) {
+    public User(String userId, String password) {
         this.userId = userId;
         this.password = password;
     }
 
-    public Integer getUserId() {
+    public String getUserId() {
         return userId;
     }
 
-    public void setUserId(Integer userId) {
+    public void setUserId(String userId) {
         this.userId = userId;
     }
 

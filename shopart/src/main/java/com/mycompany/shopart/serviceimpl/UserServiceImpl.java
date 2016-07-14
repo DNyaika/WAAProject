@@ -47,5 +47,10 @@ public class UserServiceImpl implements IUserService{
     public User authenticateUser(@PathVariable User user) {
         return userRepository.findUserById(user.getUserId());
     }
+
+    @Override
+    public void addUser(User user) {
+        userRepository.addUser(user);
+    }
     
 }

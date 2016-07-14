@@ -23,4 +23,7 @@ public interface IUserService {
     
     //Authentication 
     User authenticateUser(User user);
+    
+    //Add User
+    void addUser(User user);
 }

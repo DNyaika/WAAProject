@@ -32,7 +32,8 @@ public class AddressRepositoryImpl implements IAddressRepository {
 
     @Override
     public void addAddress(Address address) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+
+       DataSource.addAddress(address);
     }
     
 }

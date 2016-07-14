@@ -5,8 +5,11 @@
  */
 package com.mycompany.shopart.repositoryimpl;
 
+import com.mycompany.shopart.model.Address;
 import com.mycompany.shopart.model.Product;
 import com.mycompany.shopart.model.Category;
+import com.mycompany.shopart.model.Person;
+import com.mycompany.shopart.model.User;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -40,6 +43,11 @@ public class DataSource {
     private static final List<Product> phones = new ArrayList<>();
     private static final List<Product> cars = new ArrayList<>();
     private static final List<Product> laptops = new ArrayList<>();
+    
+    public static final List<Person> persons = new ArrayList<>();
+    
+    public static final List<Address> address = new ArrayList<>();
+    public static final List<User> users = new ArrayList<>();
 
     //Category
     private static final Category category;
@@ -174,6 +182,17 @@ public class DataSource {
         category.setProductCollection(phones);
         categoryCars.setProductCollection(cars);
         categoryLaptopps.setProductCollection(laptops);
+        
+        // Person 
+        Person p = new Person();
+        User u = new User();
+        p.setFirstName("Eyuel");
+        p.setLastName("Taddese");
+        u.setUserId("user");
+        u.setPassword("12345");
+        u.setPersonId(p);
+        users.add(u);
+        persons.add(p);
     }
 
 //    public static List<Product> getProducts() {
@@ -188,7 +207,6 @@ public class DataSource {
 //        }
 //        return null;
 //    }
-
     public static Category getProductByCatalogId(int id) {
         return category;
     }
@@ -196,5 +214,28 @@ public class DataSource {
     public static List<Category> getAllCategories() {
         return Arrays.asList(category, categoryLaptopps, categoryCars);
     }
-
+    public static List<User> getAllUser() {
+        return users;
+    }
+    public static void addUser(User u1) {
+        users.add(u1);
+    }
+    public static User findUserById(String userId) {
+        for(User u : users) {
+            if(userId.equals(u.getUserId())) {
+                return u;
+            }
+        }
+        return null;
+    }
+    public static void addAddress(Address address) {
+        DataSource.address.add(address);
+    }
+    
+    public static void addPerson(Person person) {
+        persons.add(person);
+    }
+    public static List<Person> getAllPerson() {
+        return persons;
+    }
 }
