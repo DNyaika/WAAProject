@@ -5,6 +5,7 @@
  */
 package com.mycompany.shopart.service;
 
+import com.mycompany.shopart.model.Person;
 import com.mycompany.shopart.model.Product;
 import java.util.List;
 
@@ -14,19 +15,19 @@ import java.util.List;
  */
 public interface IPersonService {
     // Find Person based on its ID
-    Product findById(int productId);
+    Person findById(int personId);
     
     // Add a Person
-    void addPerson(Product product);
+    void addPerson(Person person);
     
     // Delete a Person
-    void deletePerson(Product product);
+    void deletePerson(Person person);
     
     //Update a Person
-    void updatePerson(Product product);
+    void updatePerson(Person person);
     
     //Find all Persons
-    List<Product> findAllPerson();
+    List<Person> findAllPerson();
     
     
 }

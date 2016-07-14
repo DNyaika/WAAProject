@@ -19,29 +19,30 @@ import org.springframework.stereotype.Repository;
 public class UserRepositoryImpl implements IUserRepository {
 
     @Override
-    public User findUserById(int userId) {
+    public User findUserById(String userId) {
 
-        User u1 = new User();
-        Person p1 = new Person();
-        p1.setPersonId(1);
-        p1.setFirstName("Eyuel");
-        u1.setPersonId(p1);
-        u1.setUserId(1);
-        u1.setPassword("12345");
-                if(userId == u1.getUserId()) {
-                    return u1;
-                }
-        return null;
+
+       User u1 = DataSource.findUserById(userId);
+       if(u1 == null) {
+           return null;
+       }
+       else return u1;
     }
 
     @Override
-    public User findUserByPersonId(int personId) {
+    public User findUserByPersonId(String personId) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
     public User findUserByEmail(String email) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void addUser(User user) {
+        
+        DataSource.addUser(user);
     }
     
 }

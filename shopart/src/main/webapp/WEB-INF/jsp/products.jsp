@@ -28,7 +28,9 @@
                                 <p>${product.price} USD</p>
                             </div>
                             <input type="button" value="Details" onclick="location.href = '<c:url value='/product/${product.productId}'/>'" class="btn btn-primary">
-                            <input type="button" value="Add to Cart" onclick="location.href = '<c:url value='/addtocart/${product.productId}/${product.productCategory.categoryId}'/>'" class="btn btn-primary">
+                               <a href="#" class="btn btn-warning btn-large" onclick="location.href = '<c:url value='/addtocart/${product.productId}/${product.productCategory.categoryId}'/>'">
+                            <span class="glyphicon-shopping-cart glyphicon"></span> Add to Cart
+                        </a>
                         </div>
                     </div>
                 </c:forEach>

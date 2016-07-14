@@ -55,7 +55,7 @@ public class Address implements Serializable {
     @NotNull
     @Size(min = 1, max = 45)
     @Column(name = "Zip")
-    private String zip;
+    private Integer zip;
     @OneToMany(mappedBy = "address")
     private Collection<Person> personCollection;
 
@@ -66,7 +66,7 @@ public class Address implements Serializable {
         this.addressId = addressId;
     }
 
-    public Address(Integer addressId, String street, String state, String zip) {
+    public Address(Integer addressId, String street, String state, Integer zip) {
         this.addressId = addressId;
         this.street = street;
         this.state = state;
@@ -97,11 +97,11 @@ public class Address implements Serializable {
         this.state = state;
     }
 
-    public String getZip() {
+    public Integer getZip() {
         return zip;
     }
 
-    public void setZip(String zip) {
+    public void setZip(Integer zip) {
         this.zip = zip;
     }
 

@@ -6,6 +6,7 @@
 package com.mycompany.shopart.repository;
 
 import com.mycompany.shopart.model.Person;
+import java.util.List;
 
 /**
  *
@@ -25,5 +26,5 @@ public interface IPersonRepository {
     void updatePerson(Person person);
     
     // Find all list of persons
-    void findAllPerson();
+    List<Person> findAllPerson();
 }

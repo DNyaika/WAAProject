@@ -8,6 +8,7 @@ package com.mycompany.shopart.repositoryimpl;
 import com.mycompany.shopart.model.Person;
 import com.mycompany.shopart.repository.AbstractDAO;
 import com.mycompany.shopart.repository.IPersonRepository;
+import java.util.List;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -27,7 +28,8 @@ public class PersonRepositoryImpl implements IPersonRepository {
 
     @Override
     public void addPerson(Person person) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+
+        DataSource.addPerson(person);
     }
 
     @Override
@@ -41,8 +43,9 @@ public class PersonRepositoryImpl implements IPersonRepository {
     }
 
     @Override
-    public void findAllPerson() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public List<Person> findAllPerson() {
+
+        return DataSource.getAllPerson();
     }
 
 }

@@ -119,7 +119,7 @@
 --%>
 <div class="container">
                     <h1>Signup</h1>
-                    <spring:url value="/signup" var="signupURL"/>
+                    <spring:url value="/signupForm" var="signupURL"/>
                     <div class="row-fluid">
                         <div class="span12">
                             <div class="col-md-12 well">
@@ -137,7 +137,7 @@
 				</div>
 			    </div>
                             <div class="">
-                                <form:errors path="firstName" cssClass="text-danger">Error test</form:errors>
+                                <form:errors path="firstName" class="alert alert-danger"></form:errors>
                             </div>
 			</div>
                         
@@ -150,7 +150,7 @@
 				</div>
 			    </div>
                             <div class="">
-                                <form:errors path="lastName" cssClass="text-danger"/>
+                                <form:errors path="lastName" class="alert alert-danger"/>
                             </div>
 			</div>
 
@@ -163,7 +163,7 @@
                                 </div>
                             </div>
                             <div class="">
-                                <form:errors path="email" cssClass="text-danger"/>
+                                <form:errors path="email" class="alert alert-danger"/>
                             </div>
 			</div>
                         
@@ -176,7 +176,7 @@
                                 </div>
                             </div>
                             <div class="">
-                                <form:errors path="userName" cssClass="text-danger"/>
+                                <form:errors path="userName" class="alert alert-danger"/>
                             </div>
                         </div>
                         
@@ -189,7 +189,7 @@
 				</div>
                             </div>
                             <div class="">
-                                <form:errors path="password" cssClass="text-danger"/>
+                                <form:errors path="password" class="alert alert-danger"/>
                             </div>
 			</div>
                         
@@ -202,7 +202,7 @@
                                 </div>
 			    </div>
                             <div class="">
-                                <form:errors path="confirm" cssClass="text-danger"/>
+                                <form:errors path="confirm" class="alert alert-danger"/>
                             </div>
 			</div>
 
@@ -228,7 +228,7 @@
                                             </div>
                                         </div>
                                         <div class="">
-                                            <form:errors path="street" cssClass="text-danger">Error test</form:errors>
+                                            <form:errors path="street" class="alert alert-danger">Error test</form:errors>
                                         </div>
                                     </div>
 
@@ -241,7 +241,7 @@
                                             </div>
                                         </div>
                                         <div class="">
-                                            <form:errors path="zip" cssClass="text-danger"/>
+                                            <form:errors path="zip" class="alert alert-danger"/>
                                         </div>
                                     </div>
 
@@ -250,11 +250,11 @@
                                         <div class="cols-sm-10">
                                             <div class="input-group">
                                                 <span class="input-group-addon"><i class="glyphicon glyphicon-home" aria-hidden="true"></i></span>
-                                                <form:input type="text" class="form-control" path="state" name="state" id="state"  placeholder="Enter your Email"/>
+                                                <form:input type="text" class="form-control" path="state" name="state" id="state"  placeholder="Enter your State"/>
                                             </div>
                                         </div>
                                         <div class="">
-                                            <form:errors path="state" cssClass="text-danger"/>
+                                            <form:errors path="state" cssClass="text-danger" class="alert alert-danger"/>
                                         </div>
                                     </div>
 
@@ -263,11 +263,11 @@
                                         <div class="cols-sm-10">
                                             <div class="input-group">
                                                 <span class="input-group-addon"><i class="glyphicon glyphicon-earphone" aria-hidden="true"></i></span>
-                                                <form:input type="text" class="form-control" path="phone" name="phone" id="username"  placeholder="Enter your Username"/>
+                                                <form:input type="text" class="form-control" path="phone" name="phone" id="username"  placeholder="Enter your Phone"/>
                                             </div>
                                         </div>
                                         <div class="">
-                                            <form:errors path="phone" cssClass="text-danger"/>
+                                            <form:errors path="phone" cssClass="text-danger" class="alert alert-danger"/>
                                         </div>
                                     </div>
                                             <%--       </form:form> --%>
@@ -290,7 +290,7 @@
 				</div>
 			    </div>
                             <div class="">
-                                <form:errors path="cardNumber" cssClass="text-danger">Error test</form:errors>
+                                <form:errors path="cardNumber" cssClass="text-danger" class="alert alert-danger"></form:errors>
                             </div>
 			</div>
                         
@@ -307,7 +307,7 @@
 				</div>
 			    </div>
                             <div class="">
-                                <form:errors path="cardType" cssClass="text-danger"/>
+                                <form:errors path="cardType" cssClass="text-danger" class="alert alert-danger"/>
                             </div>
 			</div>
 
@@ -320,7 +320,7 @@
                                 </div>
                             </div>
                             <div class="">
-                                <form:errors path="expirationDate" cssClass="text-danger"/>
+                                <form:errors path="expirationDate" class="alert alert-danger" cssClass="text-danger"/>
                             </div>
 			</div>
                         <div class="control-group">

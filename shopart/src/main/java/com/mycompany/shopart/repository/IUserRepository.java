@@ -13,12 +13,15 @@ import com.mycompany.shopart.model.User;
  */
 public interface IUserRepository {
     //Find User By Id
-    User findUserById(int userId);
+    User findUserById(String userId);
     
     //Find User By PersonId
-    User findUserByPersonId(int personId);
+    User findUserByPersonId(String personId);
     
     //Find User by email
     User findUserByEmail(String email);
+    
+    //Add User
+    void addUser(User user);
     
 }

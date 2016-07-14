@@ -10,6 +10,7 @@ import com.mycompany.shopart.model.User;
 import com.mycompany.shopart.service.IAddressService;
 import com.mycompany.shopart.service.IPersonService;
 import com.mycompany.shopart.service.IUserService;
+import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -23,7 +24,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
  * @author 985072
  */
 @Controller
-@RequestMapping(value="/signup")
+
 public class SignupController {
     @Autowired
     private IAddressService addressService;
@@ -32,15 +33,16 @@ public class SignupController {
     @Autowired
     private IUserService userService;
     
-    @RequestMapping(method = RequestMethod.GET)
+    @RequestMapping(value="/signup",method = RequestMethod.GET)
     public String getSignupForm(Model model) {
         model.addAttribute("user", new User());
         model.addAttribute("userInfoBean", new UserInfoBean());
         return "signupTile";
+       //return "testTile";
     }
     
-    @RequestMapping(method = RequestMethod.POST)
-    public String proccessSignUp(@ModelAttribute("userInfoBean") UserInfoBean userInfoBean,
+    @RequestMapping(value="/xx",method = RequestMethod.POST)
+    public String proccessSignUp(@ModelAttribute("userInfoBean") @Valid User userInfoBean,
             Model model,BindingResult result) {
         if(result.hasErrors()) {
             return "redirect:signup";

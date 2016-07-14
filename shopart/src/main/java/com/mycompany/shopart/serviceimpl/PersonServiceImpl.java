@@ -5,6 +5,7 @@
  */
 package com.mycompany.shopart.serviceimpl;
 
+import com.mycompany.shopart.model.Person;
 import com.mycompany.shopart.model.Product;
 import com.mycompany.shopart.repository.IPersonRepository;
 import com.mycompany.shopart.service.IPersonService;
@@ -28,28 +29,29 @@ public class PersonServiceImpl implements IPersonService {
     private IPersonRepository personRepository;
 
     @Override
-    public Product findById(int productId) {
+    public Person findById(int personId) {
+        return personRepository.findPersonById(personId);
+    }
+
+    @Override
+    public void addPerson(Person person) {
+        personRepository.addPerson(person);
+    }
+
+    @Override
+    public void deletePerson(Person person) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public void addPerson(Product product) {
+    public void updatePerson(Person person) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public void deletePerson(Product product) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public List<Person> findAllPerson() {
+        return personRepository.findAllPerson();
     }
 
-    @Override
-    public void updatePerson(Product product) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 
-    @Override
-    public List<Product> findAllPerson() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
 }

@@ -38,7 +38,7 @@ public class AddressServiceImpl implements IAddressService{
 
     @Override
     public void addAddress(Address address) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       addressRepository.addAddress(address);
     }
     
 }

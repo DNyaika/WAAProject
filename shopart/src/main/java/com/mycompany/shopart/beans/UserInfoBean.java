@@ -6,6 +6,10 @@
 package com.mycompany.shopart.beans;
 
 import java.math.BigInteger;
+import javax.validation.constraints.Digits;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 import org.springframework.stereotype.Component;
 
 /**
@@ -14,17 +18,22 @@ import org.springframework.stereotype.Component;
  */
 @Component("UserInfoBean")
 public class UserInfoBean {
-    
+    @NotNull
     private String firstName;
     private String lastName;
+    @Size(min = 5,message = "{signup.email.error}")
     private String email;
     private String phone;
     private String street;
     private String state;
     private Integer zip;
+    @Size(min = 1,message = "{signup.userName.empty.error}")
     private String userName;
+    @NotNull(message = "{signup.password.empty.error}")
+    @Size(min=8,message = "{signup.password.invalid.error}")
     private String password;
     private String confirm;
+    @Digits(integer = 10,fraction = 0,message = "{signup.cardNumber.length.error}")
     private BigInteger cardNumber;
     private String cardType;
     private String expirationDate;
