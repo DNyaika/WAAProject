@@ -37,7 +37,9 @@ public class DataSource {
     private static Product accura;
     private static Product rav4;
 
-    private static final List<Product> productsList = new ArrayList<>();
+    private static final List<Product> phones = new ArrayList<>();
+    private static final List<Product> cars = new ArrayList<>();
+    private static final List<Product> laptops = new ArrayList<>();
 
     //Category
     private static final Category category;
@@ -50,10 +52,10 @@ public class DataSource {
         category.setCategoryName("Electronics");
         //-----laptops
         categoryLaptopps = new Category(2);
-        category.setCategoryName("Laptops");
+        categoryLaptopps.setCategoryName("Laptops");
         //---cars
         categoryCars = new Category(3);
-        category.setCategoryName("Cars");
+        categoryCars.setCategoryName("Cars");
 
 //--------Phones-----------
         samSungGalaxyS2 = new Product();
@@ -154,41 +156,45 @@ public class DataSource {
         macbook.setProductName("macbook");
         macbook.setProductImage("macbook");
 
-        productsList.add(samSungGalaxyS2);
-        productsList.add(samSungGalaxyS3);
-        productsList.add(samSungGalaxyS4);
-        productsList.add(samSungGalaxyNote3);
-        productsList.add(accer);
-        productsList.add(dell);
-        productsList.add(ph);
-        productsList.add(macbook);
-        productsList.add(benz);
-        productsList.add(accura);
-        productsList.add(rav4);
-        productsList.add(toyota);
+        phones.add(samSungGalaxyS2);
+        phones.add(samSungGalaxyS3);
+        phones.add(samSungGalaxyS4);
+        phones.add(samSungGalaxyNote3);
+        
+        laptops.add(accer);
+        laptops.add(dell);
+        laptops.add(ph);
+        laptops.add(macbook);
+        
+        cars.add(benz);
+        cars.add(accura);
+        cars.add(rav4);
+        cars.add(toyota);
 
-//        category.setProductCollection(productsList);
+        category.setProductCollection(phones);
+        categoryCars.setProductCollection(cars);
+        categoryLaptopps.setProductCollection(laptops);
     }
 
-    public static List<Product> getProducts() {
-        return productsList;
-    }
+//    public static List<Product> getProducts() {
+//        return productsList;
+//    }
 
-    public static Product getProductById(int id) {
-        for (Product product : productsList) {
-            if (product.getProductId() == id) {
-                return product;
-            }
-        }
-        return null;
-    }
+//    public static Product getProductById(int id) {
+//        for (Product product : productsList) {
+//            if (product.getProductId() == id) {
+//                return product;
+//            }
+//        }
+//        return null;
+//    }
 
     public static Category getProductByCatalogId(int id) {
         return category;
     }
 
     public static List<Category> getAllCategories() {
-        return Arrays.asList(category,categoryLaptopps,categoryCars);
+        return Arrays.asList(category, categoryLaptopps, categoryCars);
     }
 
 }

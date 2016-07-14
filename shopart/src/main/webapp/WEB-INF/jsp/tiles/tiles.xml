@@ -16,6 +16,10 @@
 		<put-attribute name="body" value="/WEB-INF/jsp/products.jsp" />
 	</definition>
         
+        <definition name="producttile" extends="base.definition">
+		<put-attribute name="body" value="/WEB-INF/jsp/product.jsp" />
+	</definition>
+        
         <definition name="signupTile" extends="base.definition">
             <put-attribute name="body" value="/WEB-INF/jsp/signup.jsp"/>
         </definition>

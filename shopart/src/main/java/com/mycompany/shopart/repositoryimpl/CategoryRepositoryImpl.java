@@ -20,20 +20,25 @@ import org.hibernate.Session;
  */
 @Repository
 public class CategoryRepositoryImpl extends AbstractDAO<Integer, Category> implements ICategoryRepository {
-    
+
     public CategoryRepositoryImpl() {
     }
-    
+
     @Override
     public Category findCategoryByName(String categoryName) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
+
     @Override
     public Category findeCategoryById(int categoryId) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        for (Category category : DataSource.getAllCategories()) {
+            if (category.getCategoryId() == categoryId) {
+                return category;
+            }
+        }
+        return new Category();
     }
-    
+
     @Override
     public void addCategory(Category category) {
 //        Session session = getSession();
@@ -43,22 +48,20 @@ public class CategoryRepositoryImpl extends AbstractDAO<Integer, Category> imple
 //        session.close();
         getSession().save(category);
     }
-    
+
     @Override
     public void updateCategory(Category category) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
+
     @Override
     public void deleteCategory(Category category) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
 
-    
-      @Override
+    @Override
     public List<Category> findAllCategory() {
-       return DataSource.getAllCategories();
+        return DataSource.getAllCategories();
     }
-    
+
 }

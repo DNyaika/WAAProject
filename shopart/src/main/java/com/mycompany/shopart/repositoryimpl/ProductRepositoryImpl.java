@@ -5,6 +5,7 @@
  */
 package com.mycompany.shopart.repositoryimpl;
 
+import com.mycompany.shopart.model.Category;
 import com.mycompany.shopart.model.Product;
 import com.mycompany.shopart.repository.AbstractDAO;
 import com.mycompany.shopart.repository.IProductRepository;
@@ -12,7 +13,9 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import org.hibernate.Transaction;
+import org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl;
 import org.springframework.stereotype.Repository;
+import com.mycompany.shopart.repositoryimpl.DataSource;
 
 /**
  *
@@ -27,12 +30,19 @@ public class ProductRepositoryImpl extends AbstractDAO implements IProductReposi
 
     @Override
     public Product findById(int productId) {
-        return DataSource.getProductById(productId);
+        for (Category category : DataSource.getAllCategories()) {
+            for (Product product : category.getProductCollection()) {
+                if (productId == product.getProductId()) {
+                    return product;
+                }
+            }
+        }
+        return new Product();
     }
 
     @Override
     public void addProduct(Product product) {
-        Transaction trans=getSession().beginTransaction();
+        Transaction trans = getSession().beginTransaction();
         getSession().persist(product);
         trans.commit();
     }
@@ -49,7 +59,8 @@ public class ProductRepositoryImpl extends AbstractDAO implements IProductReposi
 
     @Override
     public List<Product> findAllProduct() {
-        return DataSource.getProducts();
+        // return DataSource.getProducts();
+        return null;
     }
 
     @Override
@@ -59,6 +70,6 @@ public class ProductRepositoryImpl extends AbstractDAO implements IProductReposi
 //            products.add(product);
 //        }
 //        return products;
-return null;
+        return null;
     }
 }

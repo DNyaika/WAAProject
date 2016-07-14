@@ -8,7 +8,7 @@
 <ul class="nav list-group">
     <c:forEach items="${categories}" var="category"> 
         <li style='width:  200px;'>
-            <a class="list-group-item" href="#"><i class="icon-home icon-1x"></i>${category.categoryName}</a>
+            <a class="list-group-item" href="<c:url value='/products/${category.categoryId}'/>"><i class="icon-home icon-1x"></i>${category.categoryName}</a>
         </li>
     </c:forEach>
 

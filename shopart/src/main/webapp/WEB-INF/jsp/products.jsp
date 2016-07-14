@@ -27,7 +27,8 @@
                                 <p>${product.model}</p>
                                 <p>${product.price} USD</p>
                             </div>
-                            <input type="button" value="Details" onclick="location.href = '/waaspring/products/${product.productId}'" class="btn btn-primary">
+                            <input type="button" value="Details" onclick="location.href = '<c:url value='/product/${product.productId}'/>'" class="btn btn-primary">
+                            <input type="button" value="Add to Cart" onclick="location.href = '<c:url value='/addtocart/${product.productId}/${product.productCategory.categoryId}'/>'" class="btn btn-primary">
                         </div>
                     </div>
                 </c:forEach>

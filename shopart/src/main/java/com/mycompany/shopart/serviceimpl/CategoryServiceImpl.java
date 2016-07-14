@@ -34,7 +34,7 @@ public class CategoryServiceImpl implements ICategoryService {
 
     @Override
     public Category findeCategoryById(int categoryId) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       return categoryRepository.findeCategoryById(categoryId);
     }
 
     @Override

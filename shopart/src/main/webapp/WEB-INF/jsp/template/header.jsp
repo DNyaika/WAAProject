@@ -41,6 +41,7 @@
                     <li><a href="">About</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
+                    <li class="active"><a href="">ShoppingCart[${item}]</a></li>
                     <li class="dropdown">
                         <a href="" class="dropdown-toggle" data-toggle="dropdown">Login <span class="caret"></span></a>
                         <ul class="dropdown-menu dropdown-lr animated flipInX" role="menu">
